@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { TeamMember } from "../../shared/schema";
 import { IMPACT_STATS } from "../lib/constants";
 import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import {
   Dialog,
@@ -15,71 +14,98 @@ import {
 } from "./ui/dialog";
 
 export function ActivitiesSection() {
-  const { data: teamMembers = [
-    {
-      id:1, name:"Sitaram Prajapat", position:"School Coordinator"
-    },
-    {
-      id:2, name:"Shreena Kansagra", position:"School Coordinator"
-    },
-    {
-      id:3, name:"Isha Gupta", position:"Parisodh Coordinator"
-    },
-    
-    {
-      id:4, name:"Siddharth Bhamidipati", position:"Parisodh Coordinator"
-    },
+  const {
+    data: teamMembers = [
       {
-      id:5, name:"Aarushi Tiwari", position:"Umang Coordinator"
-    },
+        id: 1,
+        name: "Sitaram Prajapat",
+        position: "School Coordinator",
+      },
       {
-      id:6, name:"Shivansh Saxena", position:"Umang Coordinator"
-    },
+        id: 2,
+        name: "Shreena Kansagra",
+        position: "School Coordinator",
+      },
       {
-      id:7, name:"Aayush Katakwar", position:"Computer Literacy Programme Coordinator"
-    },
-      {
-      id:8, name:"Mansi Mittal", position:"Computer Literacy Programme Coordinator"
-    },
-      {
-      id:9, name:"Samridhi Agrawal", position:"Health and public awareness Coordinator"
-    },
-      {
-      id:10, name:"Bhuvanyu Kumar", position:"Health and public awareness Coordinator"
-    },
-      {
-      id:11, name:"Soumya Yadav", position:"Department of Sponsorship and Collaboration Coordinator"
-    },
-      {
-      id:12, name:"Jainam Gandhi", position:"Events Coordinator"
-    },
-      {
-      id:13, name:"Anuj Paliwal", position:"Events Coordinator"
-    },
-     {
-      id:14, name:"Atharv Agrawal", position:"Department of Design and Development Coordinator"
-    },
-     {
-      id:15, name:"Dhruv Gupta", position:"Department of Design and Development Coordinator"
-    },
-     {
-      id:16, name:"Medhansh Sharma", position:"Department of Design and Development Coordinator"
-    },
-     
+        id: 3,
+        name: "Isha Gupta",
+        position: "Parisodh Coordinator",
+      },
 
-
-
-
-
-  ], isLoading } = useQuery<TeamMember[]>({
+      {
+        id: 4,
+        name: "Siddharth Bhamidipati",
+        position: "Parisodh Coordinator",
+      },
+      {
+        id: 5,
+        name: "Aarushi Tiwari",
+        position: "Umang Coordinator",
+      },
+      {
+        id: 6,
+        name: "Shivansh Saxena",
+        position: "Umang Coordinator",
+      },
+      {
+        id: 7,
+        name: "Aayush Katakwar",
+        position: "Computer Literacy Programme Coordinator",
+      },
+      {
+        id: 8,
+        name: "Mansi Mittal",
+        position: "Computer Literacy Programme Coordinator",
+      },
+      {
+        id: 9,
+        name: "Samridhi Agrawal",
+        position: "Health and public awareness Coordinator",
+      },
+      {
+        id: 10,
+        name: "Bhuvanyu Kumar",
+        position: "Health and public awareness Coordinator",
+      },
+      {
+        id: 11,
+        name: "Soumya Yadav",
+        position: "Department of Sponsorship and Collaboration Coordinator",
+      },
+      {
+        id: 12,
+        name: "Jainam Gandhi",
+        position: "Events Coordinator",
+      },
+      {
+        id: 13,
+        name: "Anuj Paliwal",
+        position: "Events Coordinator",
+      },
+      {
+        id: 14,
+        name: "Atharv Agrawal",
+        position: "Department of Design and Development Coordinator",
+      },
+      {
+        id: 15,
+        name: "Dhruv Gupta",
+        position: "Department of Design and Development Coordinator",
+      },
+      {
+        id: 16,
+        name: "Medhansh Sharma",
+        position: "Department of Design and Development Coordinator",
+      },
+    ],
+    isLoading,
+  } = useQuery<TeamMember[]>({
     queryKey: ["/api/team"],
   });
 
   const coordinators = teamMembers.filter((member) =>
     member.position.includes("Coordinator")
   );
-
-
 
   // Department data with complete details
   const departments = [
@@ -110,8 +136,9 @@ export function ActivitiesSection() {
     },
     {
       name: "Health Public Awareness",
-      description:
-        "Managing health camps and wellness programs, leading health awareness campaigns and medical outreach.",
+      description: `The Department of Health and Public Awareness aims to spread awareness about important health and social issues and help society. We work to empower those in need so that they can live a more comfortable life and make well-informed decisions. With our initiatives, we have managed to cover several health, employment, literacy, and sanitation issues in and around Pilani.\n
+HPA believes in serving society. Over the years, we have established trustworthy relations with the people in and around the villages of Pilani. We aim to make every individual, irrespective of their gender or age, independent enough to lead an informed life.
+`,
       icon: "fas fa-stethoscope",
       color: "from-green-500 to-teal-500",
       members: coordinators.filter((c) => c.position.includes("Health")),
@@ -119,11 +146,13 @@ export function ActivitiesSection() {
         mission:
           "To improve community health through awareness campaigns, medical camps, and wellness programs.",
         activities: [
-          "Free medical checkup camps",
-          "Health awareness workshops",
-          "Vaccination drives",
-          "Mental health awareness programs",
-          "Nutrition and hygiene education",
+          "Database Creation and Extensive Survey",
+          "Clothes Sorting/Distribution",
+          "Health Camp",
+          "Adult Initiative",
+          "Policy Documentation",
+          "Health Blog",
+          "Lecture Series",
         ],
         achievements: [
           "Conducted 25+ health camps serving 3000+ people",
@@ -264,10 +293,8 @@ export function ActivitiesSection() {
         "Planning and organizing major NSS events and festivals, managing event logistics and coordination activities.",
       icon: "fas fa-calendar-alt",
       color: "from-purple-500 to-pink-500",
-      members: coordinators.filter((c) => c.position.includes("Events")), 
-        
+      members: coordinators.filter((c) => c.position.includes("Events")),
 
-      
       details: {
         mission:
           "To create impactful events that raise social awareness and engage the community in meaningful activities.",
@@ -284,7 +311,6 @@ export function ActivitiesSection() {
           "Facilitated participation of 100+ colleges in competitions",
           "Created awareness among 15,000+ community members",
         ],
-
       },
     },
   ];
@@ -440,8 +466,6 @@ export function ActivitiesSection() {
                         </div>
                       </div>
                     )}
-
-                    
                   </div>
                 </DialogContent>
               </Dialog>
