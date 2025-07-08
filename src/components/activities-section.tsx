@@ -120,45 +120,75 @@ export function ActivitiesSection() {
         mission:
           "To promote education and literacy in underserved communities through innovative teaching methods and mentorship.",
         activities: [
-          "Adult literacy programs in rural areas",
-          "School mentorship and tutoring",
-          "Educational material distribution",
-          "Computer literacy workshops",
-          "Scholarship programs for underprivileged students",
-        ],
-        achievements: [
-          "Taught 500+ adults basic literacy skills",
-          "Mentored 200+ school children",
-          "Distributed educational materials to 50+ schools",
-          "Established 5 community learning centers",
+          {
+            title: "Adult literacy programs",
+            description:
+              "Teaching basic literacy and numeracy to adults in rural areas.",
+          },
+          {
+            title: "School mentorship",
+            description:
+              "Providing tutoring and mentorship to school children.",
+          },
+          {
+            title: "Educational material distribution",
+            description:
+              "Distributing books, stationery, and other educational materials.",
+          },
         ],
       },
     },
     {
       name: "Health Public Awareness",
-      description: `The Department of Health and Public Awareness aims to spread awareness about important health and social issues and help society. We work to empower those in need so that they can live a more comfortable life and make well-informed decisions. With our initiatives, we have managed to cover several health, employment, literacy, and sanitation issues in and around Pilani.\n
-HPA believes in serving society. Over the years, we have established trustworthy relations with the people in and around the villages of Pilani. We aim to make every individual, irrespective of their gender or age, independent enough to lead an informed life.
-`,
+      description:
+        "Managing health camps and wellness programs, leading health awareness campaigns and medical outreach.",
       icon: "fas fa-stethoscope",
       color: "from-green-500 to-teal-500",
       members: coordinators.filter((c) => c.position.includes("Health")),
       details: {
-        mission:
-          "To improve community health through awareness campaigns, medical camps, and wellness programs.",
+        mission: `The Department of Health and Public Awareness aims to spread awareness about important health and social issues and help society. We work to empower those in need so that they can live a more comfortable life and make well-informed decisions. With our initiatives, we have managed to cover several health, employment, literacy, and sanitation issues in and around Pilani.\n
+HPA believes in serving society. Over the years, we have established trustworthy relations with the people in and around the villages of Pilani. We aim to make every individual, irrespective of their gender or age, independent enough to lead an informed life.
+`,
         activities: [
-          "Database Creation and Extensive Survey",
-          "Clothes Sorting/Distribution",
-          "Health Camp",
-          "Adult Initiative",
-          "Policy Documentation",
-          "Health Blog",
-          "Lecture Series",
-        ],
-        achievements: [
-          "Conducted 25+ health camps serving 3000+ people",
-          "Organized vaccination drives reaching 1500+ children",
-          "Distributed free medicines worth ₹1,50,000",
-          "Trained 100+ community health volunteers",
+          {
+            title: "Database Creation and Extensive Survey",
+            description:
+              "As part of this new initiative, a detailed database of beneficiaries will be developed for Hanumantpura, Poorvi Marg, and other prospective locations. This database will compile crucial information on population demographics, basic needs, existing challenges, and the community’s awareness of government schemes. The insights gathered through this extensive survey will help in designing and implementing future initiatives that are specifically tailored to address the unique needs of each area.",
+          },
+          {
+            title: "Clothes Sorting/Distribution",
+            description: `Building on the success of last year's efforts, HPA will once again collect and distribute old clothes and toys generously donated by students and faculty members. This initiative not only helps meet basic needs but also encourages sustainability by reducing wastage.
+\n\nHPA volunteers carefully sort through the collected items, as well as those already in inventory, categorizing them into winter wear, summer wear, and unusable items. Usable clothes are neatly stored and later distributed in nearby villages and bastis, bringing comfort and smiles to those who need them most.
+`,
+          },
+          {
+            title: "Health Camp",
+            description: `With the valuable support of medical professionals from MedC, HPA organises free health camps aimed at providing essential healthcare services to under-resourced communities. These camps will include general health checkups, where individuals can get their vital signs (such as blood pressure, heart rate, and temperature) monitored, along with basic screenings for common illnesses.
+
+In addition to the checkups, general medications—such as pain relievers, vitamins, and treatments for minor infections—will be distributed free of cost. This initiative is especially focused on reaching individuals who have limited or no access to medical facilities. By offering these services, we aim to promote early detection of health issues, raise awareness about hygiene and wellness, and ensure that basic healthcare becomes accessible to everyone, regardless of their socioeconomic background.
+`,
+          },
+          {
+            title: "Adult Initiative",
+            description: `HPA plans to conduct 2–3 skill-building initiatives specifically designed for older women in the nearby communities, with the goal of fostering self-reliance and enabling them to play a more active role in their families' growth and education.
+These initiatives will be informed by a preliminary community survey that aims to identify the interests, existing skill levels, and needs of the women. Based on the survey findings, the programs may include training in areas such as tailoring, handicrafts, basic literacy, digital skills, or home-based entrepreneurship.
+By equipping these women with practical and sustainable skills, the initiative seeks not only to improve their own financial independence and confidence but also to enable them to better support and educate their children. This ripple effect helps strengthen entire families and contributes to the long-term development of the community.
+`,
+          },
+          {
+            title: "Policy Documentation",
+            description: `HPA is reviving a past initiative to compile and share information on useful government schemes and policies with the communities nearby. These documents will highlight benefits related to healthcare, education, employment, and welfare that are often underutilized due to a lack of awareness.
+Our volunteers will simplify the language and format to ensure the information is easy to understand and accessible to everyone in the Pilani community. This effort aims to empower individuals to make use of the resources and support available to them.
+`,
+          },
+          {
+            title: "Health Blog",
+            description: `An exciting initiative by HPA and D3, where we bring you insights, tips, and facts about health, wellness, and safety — because caring for yourself and those around you is where true service begins!`,
+          },
+          {
+            title: "Lecture Series",
+            description: `To promote holistic development and awareness among younger students, HPA will continue organising lecture series in collaboration with School to educate students about current and important issues related to health and sanitation.`,
+          },
         ],
       },
     },
@@ -173,17 +203,15 @@ HPA believes in serving society. Over the years, we have established trustworthy
         mission:
           "To promote environmental conservation and sustainability through community-driven initiatives.",
         activities: [
-          "Tree plantation drives",
-          "Waste segregation and recycling programs",
-          "River and lake cleanup campaigns",
-          "Plastic-free awareness initiatives",
-          "Sustainable living workshops",
-        ],
-        achievements: [
-          "Planted 2000+ trees across the region",
-          "Cleaned 15+ water bodies",
-          "Established 10 waste segregation centers",
-          "Reduced plastic usage by 30% in partner communities",
+          {
+            title: "Tree plantation drives",
+            description: "Planting trees to improve the local environment.",
+          },
+          {
+            title: "Waste segregation and recycling programs",
+            description:
+              "Promoting waste segregation and recycling to reduce landfill waste.",
+          },
         ],
       },
     },
@@ -198,17 +226,16 @@ HPA believes in serving society. Over the years, we have established trustworthy
         mission:
           "To build sustainable partnerships and secure resources for NSS initiatives through strategic collaborations.",
         activities: [
-          "Corporate partnership development",
-          "Grant application and management",
-          "Sponsorship for events and programs",
-          "Inter-institutional collaborations",
-          "Resource mobilization strategies",
-        ],
-        achievements: [
-          "Secured ₹5,00,000+ in sponsorships and grants",
-          "Established partnerships with 25+ organizations",
-          "Facilitated collaboration with 15+ educational institutions",
-          "Organized 10+ joint initiatives with partner organizations",
+          {
+            title: "Corporate partnership development",
+            description:
+              "Developing partnerships with corporate organizations to secure funding and resources.",
+          },
+          {
+            title: "Grant application and management",
+            description:
+              "Applying for and managing grants to fund NSS initiatives.",
+          },
         ],
       },
     },
@@ -223,17 +250,16 @@ HPA believes in serving society. Over the years, we have established trustworthy
         mission:
           "To bridge the digital divide by providing computer education and digital literacy to underserved communities.",
         activities: [
-          "Basic computer training programs",
-          "Digital literacy for adults",
-          "Online safety and cybersecurity workshops",
-          "Government scheme awareness through digital platforms",
-          "E-governance assistance programs",
-        ],
-        achievements: [
-          "Trained 800+ individuals in basic computer skills",
-          "Established 12 computer learning centers",
-          "Conducted 50+ digital literacy workshops",
-          "Helped 300+ people access government services online",
+          {
+            title: "Basic computer training programs",
+            description:
+              "Providing basic computer training to children and adults.",
+          },
+          {
+            title: "Digital literacy for adults",
+            description:
+              "Teaching adults how to use computers and the internet.",
+          },
         ],
       },
     },
@@ -248,17 +274,16 @@ HPA believes in serving society. Over the years, we have established trustworthy
         mission:
           "To provide essential resources and support to underprivileged communities through organized donation drives.",
         activities: [
-          "Clothing and food distribution drives",
-          "Emergency relief operations",
-          "Educational material donations",
-          "Medical equipment distribution",
-          "Skill development workshops",
-        ],
-        achievements: [
-          "Distributed food packets to 5000+ families",
-          "Collected and donated 10,000+ clothing items",
-          "Provided emergency relief to 500+ disaster-affected families",
-          "Established 8 community resource centers",
+          {
+            title: "Clothing and food distribution drives",
+            description:
+              "Collecting and distributing clothing and food to those in need.",
+          },
+          {
+            title: "Emergency relief operations",
+            description:
+              "Providing emergency relief during natural disasters and other crises.",
+          },
         ],
       },
     },
@@ -273,17 +298,15 @@ HPA believes in serving society. Over the years, we have established trustworthy
         mission:
           "To enhance NSS's digital presence and create compelling visual content that amplifies our social impact message.",
         activities: [
-          "Website and mobile app development",
-          "Social media content creation",
-          "Event branding and promotional materials",
-          "Digital campaign design",
-          "Photography and videography for events",
-        ],
-        achievements: [
-          "Developed and maintained NSS website with 10,000+ monthly visitors",
-          "Created visual content for 50+ campaigns",
-          "Increased social media engagement by 200%",
-          "Designed promotional materials for 30+ events",
+          {
+            title: "Website and mobile app development",
+            description:
+              "Developing and maintaining the NSS website and mobile app.",
+          },
+          {
+            title: "Social media content creation",
+            description: "Creating content for NSS's social media channels.",
+          },
         ],
       },
     },
@@ -299,17 +322,16 @@ HPA believes in serving society. Over the years, we have established trustworthy
         mission:
           "To create impactful events that raise social awareness and engage the community in meaningful activities.",
         activities: [
-          "Annual festivals and cultural events",
-          "Awareness campaigns and workshops",
-          "Community engagement programs",
-          "Inter-college competitions",
-          "Fundraising events",
-        ],
-        achievements: [
-          "Organized 50+ successful events with 20,000+ participants",
-          "Raised ₹3,00,000+ through fundraising events",
-          "Facilitated participation of 100+ colleges in competitions",
-          "Created awareness among 15,000+ community members",
+          {
+            title: "Annual festivals and cultural events",
+            description:
+              "Organizing annual festivals and cultural events to promote social awareness.",
+          },
+          {
+            title: "Awareness campaigns and workshops",
+            description:
+              "Organizing awareness campaigns and workshops on various social issues.",
+          },
         ],
       },
     },
@@ -370,7 +392,10 @@ HPA believes in serving society. Over the years, we have established trustworthy
                       <h4 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                         {dept.name}
                       </h4>
-                      <p className="text-sm text-gray-600 line-clamp-3">
+                      <p
+                        className="text-sm text-gray-600 line-clamp-3"
+                        style={{ whiteSpace: "pre-line" }}
+                      >
                         {dept.description}
                       </p>
                       <div className="mt-4">
@@ -408,34 +433,23 @@ HPA believes in serving society. Over the years, we have established trustworthy
                       <h3 className="text-lg font-semibold text-gray-800 mb-3">
                         Key Activities
                       </h3>
-                      <ul className="space-y-2">
+                      <div className="space-y-4">
                         {dept.details.activities.map((activity, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-start gap-2 text-gray-600"
-                          >
-                            <i className="fas fa-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                            <span>{activity}</span>
-                          </li>
+                          <div key={idx} className="flex items-start gap-3">
+                            <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                              <i className="fas fa-check-circle text-green-500"></i>
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-gray-800">
+                                {activity.title}
+                              </h4>
+                              <p className="text-gray-600">
+                                {activity.description}
+                              </p>
+                            </div>
+                          </div>
                         ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                        Achievements
-                      </h3>
-                      <ul className="space-y-2">
-                        {dept.details.achievements.map((achievement, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-start gap-2 text-gray-600"
-                          >
-                            <i className="fas fa-trophy text-yellow-500 mt-1 flex-shrink-0"></i>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      </div>
                     </div>
 
                     {dept.members.length > 0 && (
