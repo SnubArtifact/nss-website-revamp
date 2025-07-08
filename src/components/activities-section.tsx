@@ -117,23 +117,40 @@ export function ActivitiesSection() {
       color: "from-blue-500 to-indigo-500",
       members: coordinators.filter((c) => c.position.includes("School")),
       details: {
-        mission:
-          "To promote education and literacy in underserved communities through innovative teaching methods and mentorship.",
+        mission: `NSS School is a community-driven initiative located in Pilani, committed to delivering high-quality, holistic education to students from grades 1 to 12—with a core mission of providing free education for all.  Operated by a team of passionate and dedicated volunteers, the school emphasizes not only strong academic foundations but also the development of moral values, social awareness, and a deep sense of responsibility in its students.
+
+In addition to a well-rounded academic curriculum, the school collaborates with other departments to actively promote digital literacy, basic health awareness, sustainability, and more. Through a range of thoughtfully designed events and initiatives, NSS School fosters an environment where students are encouraged to think critically, act ethically, and contribute meaningfully to society. The school’s approach reflects a strong belief in education as a powerful tool for personal growth and community development.
+`,
         activities: [
           {
-            title: "Adult literacy programs",
-            description:
-              "Teaching basic literacy and numeracy to adults in rural areas.",
+            title: "Umeed",
+            description: `Umeed is an inspiring collaborative initiative between NSS School and the CLP (Computer Literacy Program) department, aimed at promoting academic curiosity and excellence among school students in Pilani. This Olympiad features questions from Mathematics, Science, English, and Computer, and is open to students from classes 6 to 10, with the exact class range varying based on the structure and focus set by the organizing team for each edition. 
+            
+            Students from several schools across Pilani participate in Umeed, including Hanumantpura, Hemant, Rakesh, NSS School, Parc Centre, and others. The event not only recognizes top performers with awards, but also celebrates every participant with certificates of appreciation, encouraging a love for learning and healthy competition, as well as helping students strengthen their preparation for future competitive exams.`,
           },
           {
-            title: "School mentorship",
-            description:
-              "Providing tutoring and mentorship to school children.",
+            title: "ELP",
+            description: `ELP (English Learning Program) is a significant initiative at NSS School, BITS Pilani, designed to improve the  practical english skills of students from grades 4 to 8. Conducted by our dedicated team of volunteers, the program offers structured classes that focus on both spoken and written English. Through interactive sessions, reading exercises, vocabulary-building activities, and conversational practice, ELP helps students gain fluency and confidence in using the language. The program aims to create a comfortable and encouraging environment where students can freely express themselves and gradually develop a strong command of English.`,
           },
           {
-            title: "Educational material distribution",
-            description:
-              "Distributing books, stationery, and other educational materials.",
+            title: "MAP",
+            description: `MAP (Mental Ability Program) runs alongside ELP to strengthen students’ logical reasoning and problem-solving abilities. This program engages students in a variety of thought-provoking exercises such as puzzles, pattern recognition, number series, and aptitude-based tasks. Taught in an accessible and engaging way by our volunteers, MAP not only enhances critical thinking but also prepares students for academic challenges ahead, including entrance exams and competitive tests.`,
+          },
+          {
+            title: "Unnati",
+            description: `Unnati is a mentorship initiative that connects students with dedicated volunteers who have successfully cleared competitive exams such as JEE, NEET, and KVPY. The experienced volunteers of NSS School provide personalized guidance, sharing valuable insights, study strategies, and motivational support tailored to each student’s needs. Through regular lectures, paired with doubt solving sessions and regular mock tests, Unnati aims to help students navigate the challenges of preparing for competitive exams, build confidence, and stay focused on their higher education goals. This program fosters a supportive learning environment where students can seek advice, clarify doubts, and receive encouragement from those who have firsthand experience in excelling at these demanding exams.`,
+          },
+          {
+            title: "Navodaya",
+            description: `Navodaya schools, officially known as Jawahar Navodaya Vidyalayas, are prestigious residential institutions dedicated to providing modern, high-quality education to talented students from rural areas across India. These schools aim to nurture and develop the potential of gifted rural youth by offering them access to excellent academic resources and holistic development opportunities. Admission to Jawahar Navodaya Vidyalayas is through the Jawahar Navodaya Vidyalaya Selection Test (JNVST), which is conducted for students seeking entry into Class VI and Class IX. To support aspiring students, we offer focused preparation programs aligned with the JNVST syllabus. These programs are designed to familiarize students with the exam pattern, strengthen their core concepts, and boost their confidence, thereby increasing their chances of success in securing admission to these esteemed`,
+          },
+          {
+            title: "Utkarsh",
+            description: `Utkarsh is a collaborative initiative between the Umang and School departments that seeks to introduce children from underprivileged communities in the Pilani basti to the world of education. The program not only provides transportation to ensure their regular access to the NSS School but also focuses on imparting foundational learning in a supportive environment. By familiarizing them with basic academic concepts and classroom settings, Utkarsh serves as a crucial first step in integrating these children into the formal education system.`,
+          },
+          {
+            title: "Udaan",
+            description: `Udaan is NSS School’s vibrant year-end celebration that offers students a wonderful platform to showcase their talents and teamwork through performances in dance, music, drama, and poetry. In the weeks leading up to the event, students and volunteers come together for joyful and engaging practice sessions, which not only prepare them for the stage but also help build strong bonds and lasting memories. The excitement and enthusiasm among the students to perform at the school’s Annual Day event, Udaan is a truly memorable and heartwarming occasion.`,
           },
         ],
       },
@@ -146,7 +163,8 @@ export function ActivitiesSection() {
       color: "from-green-500 to-teal-500",
       members: coordinators.filter((c) => c.position.includes("Health")),
       details: {
-        mission: `The Department of Health and Public Awareness aims to spread awareness about important health and social issues and help society. We work to empower those in need so that they can live a more comfortable life and make well-informed decisions. With our initiatives, we have managed to cover several health, employment, literacy, and sanitation issues in and around Pilani.\n
+        mission: `The Department of Health and Public Awareness aims to spread awareness about important health and social issues and help society. We work to empower those in need so that they can live a more comfortable life and make well-informed decisions. With our initiatives, we have managed to cover several health, employment, literacy, and sanitation issues in and around Pilani.
+
 HPA believes in serving society. Over the years, we have established trustworthy relations with the people in and around the villages of Pilani. We aim to make every individual, irrespective of their gender or age, independent enough to lead an informed life.
 `,
         activities: [
@@ -158,7 +176,8 @@ HPA believes in serving society. Over the years, we have established trustworthy
           {
             title: "Clothes Sorting/Distribution",
             description: `Building on the success of last year's efforts, HPA will once again collect and distribute old clothes and toys generously donated by students and faculty members. This initiative not only helps meet basic needs but also encourages sustainability by reducing wastage.
-\n\nHPA volunteers carefully sort through the collected items, as well as those already in inventory, categorizing them into winter wear, summer wear, and unusable items. Usable clothes are neatly stored and later distributed in nearby villages and bastis, bringing comfort and smiles to those who need them most.
+
+HPA volunteers carefully sort through the collected items, as well as those already in inventory, categorizing them into winter wear, summer wear, and unusable items. Usable clothes are neatly stored and later distributed in nearby villages and bastis, bringing comfort and smiles to those who need them most.
 `,
           },
           {
@@ -171,13 +190,16 @@ In addition to the checkups, general medications—such as pain relievers, vitam
           {
             title: "Adult Initiative",
             description: `HPA plans to conduct 2–3 skill-building initiatives specifically designed for older women in the nearby communities, with the goal of fostering self-reliance and enabling them to play a more active role in their families' growth and education.
+
 These initiatives will be informed by a preliminary community survey that aims to identify the interests, existing skill levels, and needs of the women. Based on the survey findings, the programs may include training in areas such as tailoring, handicrafts, basic literacy, digital skills, or home-based entrepreneurship.
+
 By equipping these women with practical and sustainable skills, the initiative seeks not only to improve their own financial independence and confidence but also to enable them to better support and educate their children. This ripple effect helps strengthen entire families and contributes to the long-term development of the community.
 `,
           },
           {
             title: "Policy Documentation",
             description: `HPA is reviving a past initiative to compile and share information on useful government schemes and policies with the communities nearby. These documents will highlight benefits related to healthcare, education, employment, and welfare that are often underutilized due to a lack of awareness.
+
 Our volunteers will simplify the language and format to ensure the information is easy to understand and accessible to everyone in the Pilani community. This effort aims to empower individuals to make use of the resources and support available to them.
 `,
           },
@@ -265,24 +287,37 @@ Our volunteers will simplify the language and format to ensure the information i
     },
     {
       name: "Umang",
-      description:
-        "Organizing donation drives and resource distribution, coordinating community welfare and support programs.",
+      description: "Organizing support programmes for those in need.",
       icon: "fas fa-hands-helping",
       color: "from-orange-500 to-red-500",
       members: coordinators.filter((c) => c.position.includes("Umang")),
       details: {
         mission:
-          "To provide essential resources and support to underprivileged communities through organized donation drives.",
+          "To provide essential resources and support to underprivileged communities through organized support programmes.",
         activities: [
           {
-            title: "Clothing and food distribution drives",
-            description:
-              "Collecting and distributing clothing and food to those in need.",
+            title: "Umang Scholarship Programme (USP)",
+            description: `Under this programme, we provide scholarships to over 160 students from Pilani, primarily based on merit. We conduct a scholarship test to identify deserving candidates and fund the education of underprivileged students, ensuring that financial constraints do not hinder their academic growth.In addition to the test, our team conducts home visits to gain a better understanding of the students' socio-economic backgrounds and verify the information provided. Through this initiative, we strive to empower underprivileged students by enabling them to pursue their education without financial constraints.`,
           },
           {
-            title: "Emergency relief operations",
-            description:
-              "Providing emergency relief during natural disasters and other crises.",
+            title: "Umang Collection (UC)",
+            description: `This initiative is the largest crowdfunding event on campus, aimed at raising funds from the BITSian community to support the education of underprivileged students.The funds raised through this campaign are used to provide scholarships to deserving students, enabling them to continue their education without financial burden`,
+          },
+          {
+            title: "Project Pragya",
+            description: `Project Pragya is conducted specifically for the communities of Court Basti and Jherli Basti. Through this initiative, we aim to support the educational needs of children in these areas by distributing essential stationery items and providing scholarships to deserving students. The project focuses on ensuring that lack of basic resources does not become a barrier to their learning and academic progress.`,
+          },
+          {
+            title: "Career Counselling",
+            description: `As part of our career counselling initiative, we provide students with information about various academic streams, career opportunities, and future prospects available to them. Our goal is to help them make informed decisions about their educational and professional paths. To achieve this, we conduct interactive sessions in their schools, where we guide them through different options they can pursue based on their interests and strengths.`,
+          },
+          {
+            title: "Motivational Sessions",
+            description: `We conduct motivational sessions with the aim of uplifting and encouraging the students we support. These sessions are designed to boost their morale, build self-confidence, and inspire them to stay focused on their academic and personal goals. By sharing real-life success stories and fostering a positive mindset, we strive to create an environment where students feel supported and motivated to overcome challenges and realize their full potential.`,
+          },
+          {
+            title: "Student Mentorship Programme",
+            description: `In the Student Mentorship Programme (SMP), we offer continuous support to students in both their personal and academic lives. The mentor helps the mentee navigate academic challenges, manage time effectively, while also being a source of emotional support. Each student is paired with a dedicated mentor who serves not only as a guide but also as a friend they can rely on`,
           },
         ],
       },
@@ -417,14 +452,19 @@ Our volunteers will simplify the language and format to ensure the information i
                       </div>
                       {dept.name}
                     </DialogTitle>
-                    <DialogDescription>{dept.description}</DialogDescription>
+                    <DialogDescription style={{ whiteSpace: "pre-line" }}>
+                      {dept.description}
+                    </DialogDescription>
                   </DialogHeader>
                   <div className="space-y-6">
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800 mb-3">
                         Mission
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p
+                        className="text-gray-600 leading-relaxed"
+                        style={{ whiteSpace: "pre-line" }}
+                      >
                         {dept.details.mission}
                       </p>
                     </div>
@@ -443,7 +483,10 @@ Our volunteers will simplify the language and format to ensure the information i
                               <h4 className="font-semibold text-gray-800">
                                 {activity.title}
                               </h4>
-                              <p className="text-gray-600">
+                              <p
+                                className="text-gray-600"
+                                style={{ whiteSpace: "pre-line" }}
+                              >
                                 {activity.description}
                               </p>
                             </div>
