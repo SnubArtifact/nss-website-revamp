@@ -11,40 +11,37 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Parth Pahade",
     position: "President",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
   },
   {
     name: "Harshit Jhawar",
     position: "Vice President",
-    imageUrl:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
   },
   {
     name: "Devansh Sureka",
     position: "Secretary",
-    imageUrl:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    imageUrl: "/2023/devansh.jpeg",
   },
   // School Department
   {
     name: "Sitaram Prajapat",
     position: "School Coordinator 1",
-    imageUrl:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    imageUrl: "/2023/sitaram.jpeg",
   },
   {
     name: "Shreena Kansagra",
     position: "School Coordinator 2",
+    imageUrl: "/2023/shreena.jpg",
   },
   // Health Public Awareness Department
   {
     name: "Bhuvanyu Kumar Sharma",
     position: "Health Public Awareness Coordinator 1",
+    imageUrl: "/2023/bhuvanyu.jpeg",
   },
   {
-    name: "Samridhi Agarwal",
+    name: "Samridhi Agrawal",
     position: "Health Public Awareness Coordinator 2",
+    imageUrl: "/2023/samridhi.jpeg",
   },
   // Parisodh Department
   {
@@ -54,6 +51,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Siddharth Bhamidipati",
     position: "Parisodh Coordinator 2",
+    imageUrl: "/2023/siddharth.jpeg",
   },
   // Computer Literacy Programme Department
   {
@@ -63,6 +61,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Mansi Mittal",
     position: "Computer Literacy Programme Coordinator 2",
+    imageUrl: "/2023/mansi.jpeg",
   },
   // Umang Department
   {
@@ -72,11 +71,13 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Aarushi Tiwari",
     position: "Umang Coordinator 2",
+    imageUrl: "/2023/aarushi.jpeg",
   },
   // Events Department
   {
     name: "Anuj Paliwal",
     position: "Events Coordinator 1",
+    imageUrl: "/2023/anuj.jpeg",
   },
   {
     name: "Jainam Gandhi",
@@ -91,10 +92,12 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Atharv Agarwal",
     position: "Design and Development Coordinator 1",
+    imageUrl: "/2023/atharv.png",
   },
   {
     name: "Medhansh Sharma",
     position: "Design and Development Coordinator 2",
+    imageUrl: "/2023/medhansh.jpeg",
   },
   {
     name: "Dhruv Gupta",

@@ -36,7 +36,7 @@ export function TeamSection() {
           <div className="w-24 h-1 gradient-bg mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Meet the dedicated team members who lead our community service
-            initiatives and drive positive change.
+            initiinitiatives and drive positive change.
           </p>
         </div>
 
@@ -71,13 +71,15 @@ export function TeamSection() {
                           {faculty.name}
                         </h5>
                         <p className="text-sm text-bits-blue font-medium mb-2">
-                          Faculty In-charge
+                          {faculty.position}
                         </p>
                         {faculty.email && (
-                          <Button variant="ghost" size="sm" className="mt-2">
-                            <i className="fas fa-envelope mr-2"></i>
-                            Contact
-                          </Button>
+                          <a href={`mailto:${faculty.email}`}>
+                            <Button variant="ghost" size="sm" className="mt-2">
+                              <i className="fas fa-envelope mr-2"></i>
+                              {faculty.email}
+                            </Button>
+                          </a>
                         )}
                       </CardContent>
                     </Card>
@@ -111,8 +113,16 @@ export function TeamSection() {
                           {officer.name}
                         </h5>
                         <p className="text-sm text-community-green font-medium mb-2">
-                          Programme Officer
+                          {officer.position}
                         </p>
+                        {officer.email && (
+                          <a href={`mailto:${officer.email}`}>
+                            <Button variant="ghost" size="sm" className="mt-2">
+                              <i className="fas fa-envelope mr-2"></i>
+                              {officer.email}
+                            </Button>
+                          </a>
+                        )}
                       </CardContent>
                     </Card>
                   </motion.div>
