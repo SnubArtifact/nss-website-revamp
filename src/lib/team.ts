@@ -11,10 +11,12 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Parth Pahade",
     position: "President",
+    imageUrl: "/2023/parth.jpg",
   },
   {
     name: "Harshit Jhawar",
     position: "Vice President",
+    imageUrl: "/2023/harshit.jpg",
   },
   {
     name: "Devansh Sureka",
@@ -24,84 +26,90 @@ export const teamMembers: TeamMember[] = [
   // School Department
   {
     name: "Sitaram Prajapat",
-    position: "School Coordinator 1",
+    position: "School Coordinator",
     imageUrl: "/2023/sitaram.jpeg",
   },
   {
     name: "Shreena Kansagra",
-    position: "School Coordinator 2",
+    position: "School Coordinator",
     imageUrl: "/2023/shreena.jpg",
   },
   // Health Public Awareness Department
   {
     name: "Bhuvanyu Kumar Sharma",
-    position: "Health Public Awareness Coordinator 1",
+    position: "Health Public Awareness Coordinator",
     imageUrl: "/2023/bhuvanyu.jpeg",
   },
   {
     name: "Samridhi Agrawal",
-    position: "Health Public Awareness Coordinator 2",
+    position: "Health Public Awareness Coordinator",
     imageUrl: "/2023/samridhi.jpeg",
   },
   // Parisodh Department
   {
     name: "Isha Gupta",
-    position: "Parisodh Coordinator 1",
+    position: "Parisodh Coordinator",
+    imageUrl: "/2023/isha.jpg",
   },
   {
     name: "Siddharth Bhamidipati",
-    position: "Parisodh Coordinator 2",
+    position: "Parisodh Coordinator",
     imageUrl: "/2023/siddharth.jpeg",
   },
   // Computer Literacy Programme Department
   {
     name: "Aayush Katakwar",
-    position: "Computer Literacy Programme Coordinator 1",
+    position: "Computer Literacy Programme Coordinator",
+    imageUrl: "/2023/aayush.jpeg",
   },
   {
     name: "Mansi Mittal",
-    position: "Computer Literacy Programme Coordinator 2",
+    position: "Computer Literacy Programme Coordinator",
     imageUrl: "/2023/mansi.jpeg",
   },
   // Umang Department
   {
     name: "Shivansh Saxena",
-    position: "Umang Coordinator 1",
+    position: "Umang Coordinator",
+    imageUrl: "/2023/shivansh.jpg",
   },
   {
     name: "Aarushi Tiwari",
-    position: "Umang Coordinator 2",
+    position: "Umang Coordinator",
     imageUrl: "/2023/aarushi.jpeg",
   },
   // Events Department
   {
     name: "Anuj Paliwal",
-    position: "Events Coordinator 1",
+    position: "Events Coordinator",
     imageUrl: "/2023/anuj.jpeg",
   },
   {
     name: "Jainam Gandhi",
-    position: "Events Coordinator 2",
+    position: "Events Coordinator",
+    imageUrl: "/2023/jainam.jpg",
   },
   // Department of Sponsorship and Collaboration
   {
     name: "Soumya Yadav",
-    position: "Sponsorship and Collaboration Coordinator 1",
+    position: "Sponsorship and Collaboration Coordinator",
+    imageUrl: "/2023/soumya.jpg",
   },
   // Department of Design and Development
   {
     name: "Atharv Agarwal",
-    position: "Design and Development Coordinator 1",
+    position: "Design and Development Coordinator",
     imageUrl: "/2023/atharv.png",
   },
   {
     name: "Medhansh Sharma",
-    position: "Design and Development Coordinator 2",
+    position: "Design and Development Coordinator",
     imageUrl: "/2023/medhansh.jpeg",
   },
   {
     name: "Dhruv Gupta",
-    position: "Design and Development Coordinator 3",
+    position: "Design and Development Coordinator",
+    imageUrl: "/2023/dhruv.jpeg",
   },
 ];
 
