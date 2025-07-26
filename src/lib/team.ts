@@ -7,7 +7,7 @@ export type TeamMember = {
 };
 
 export const teamMembers: TeamMember[] = [
-  // Leadership Team
+  // Office Bearers
   {
     name: "Parth Pahade",
     position: "President",

@@ -132,10 +132,10 @@ export function TeamSection() {
           )}
         </div>
 
-        {/* Leadership Team */}
+        {/* Office Bearers */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
-            Leadership Team
+            Office Bearers
           </h3>
 
           {leadershipTeam.length > 0 && (
@@ -155,9 +155,7 @@ export function TeamSection() {
           {/* Department Coordinators */}
           {coordinators.length > 0 && (
             <div>
-              <h4 className="text-xl font-semibold text-center text-gray-800 mb-6">
-                Department Coordinators
-              </h4>
+              
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {coordinators.map((coordinator, index) => (
                   <TeamMemberCard
