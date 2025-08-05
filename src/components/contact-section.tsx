@@ -145,12 +145,28 @@ export function ContactSection() {
                       Address
                     </h4>
                     <p className="text-gray-600">
-                      NSS Office, Student Activity Center
+                      NSS Office, near S9
                       <br />
-                      BITS Pilani, Pilani Campus, Rajasthan 333031
+                      BITS Pilani, Rajasthan 333031
                     </p>
                   </div>
                 </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-community-green/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-envelope text-community-green"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
+                    <p className="text-gray-600">
+                      nss@pilani.bits-pilani.ac.in
+                    </p>
+                  </div>
+                </div>
+
+                
+
+               
               </div>
             </div>
 

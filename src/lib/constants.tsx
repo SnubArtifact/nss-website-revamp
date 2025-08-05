@@ -78,7 +78,7 @@ export const ACTIVITIES = [
 export const IMPACT_STATS = [
   {
     value: "1989",
-    label: "Started In",
+    label: "Started in",
     color: "text-bits-blue"
   },
   {

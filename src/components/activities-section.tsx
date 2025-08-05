@@ -30,13 +30,17 @@ export function ActivitiesSection() {
 
         {/* Departments Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {departments.map((dept, index) => (
+          {departments
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((dept, index) => (
             <motion.div
               key={dept.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
+
+              
             >
               <Dialog>
                 <DialogTrigger asChild>
@@ -56,7 +60,7 @@ export function ActivitiesSection() {
                       >
                         {dept.description}
                       </p>
-                      
+                     
                     </CardContent>
                   </Card>
                 </DialogTrigger>
@@ -145,7 +149,11 @@ export function ActivitiesSection() {
                 </DialogContent>
               </Dialog>
             </motion.div>
-          ))}
+
+          )
+          )}
+          
+
         </div>
 
         {/* Impact Statistics */}
