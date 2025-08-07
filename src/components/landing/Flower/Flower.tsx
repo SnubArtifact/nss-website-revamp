@@ -6,14 +6,17 @@ import styles from "./flower.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Flower = forwardRef((props, ref: any) => {
+interface FlowerProps {
+  onStemComplete?: () => void;
+}
+
+const Flower = forwardRef<HTMLDivElement, FlowerProps>(({ onStemComplete }, ref) => {
   useGSAP(
     () => {
-      gsap.fromTo(
+      const stemAnimation = gsap.fromTo(
         `.${styles.stem} path`,
         {
           strokeDashoffset: 781.4827880859375,
-          // strokeDasharray: 781.4827880859375,
         },
         {
           scrollTrigger: {
@@ -24,11 +27,16 @@ const Flower = forwardRef((props, ref: any) => {
             scrub: 2,
           },
           strokeDashoffset: 0,
-          // strokeDasharray: 0,
+          ease: "power2.inOut",
+          onComplete: () => {
+            if (onStemComplete) {
+              onStemComplete();
+            }
+          },
         }
       );
     },
-    { dependencies: [] }
+    { dependencies: [onStemComplete] }
   );
 
   return (
@@ -79,14 +87,12 @@ const Flower = forwardRef((props, ref: any) => {
       >
         <path
           d="M43.2437 -13C10.4681 49.8102 71.1778 117.04 48.3289 184.061C28.8935 241.129 -7.43485 276.136 26.525 335.362C42.6167 363.374 73.1283 393.996 69.1228 428.481C64.7689 466.341 50.6625 501.104 31.0877 533.779C8.97034 570.7 3.57168 607.133 19.4196 649.1C28.1272 672.205 41.7459 702.027 46.3784 726.247"
-          // stroke="#FFF1EB"
-          stroke="#FFF"
+          stroke="#fed7aa"
           strokeWidth="20"
           strokeMiterlimit="10"
           style={{
             strokeDasharray: "781.4827880859375px",
           }}
-          // style="stroke-dashoffset: 5.7e-05; stroke-dasharray: 736.751px, 44.8314px;"
         ></path>
       </svg>
     </div>
