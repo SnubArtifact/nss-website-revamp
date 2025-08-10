@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { events } from '../lib/events';
+import { BackButton } from '../components/ui/back-button';
 
 type GalleryImage = {
   id: number;
@@ -59,14 +60,19 @@ export const Junoon = () => {
       {/* Elegant Header */}
       <header className="py-16 bg-[#ffc3c0] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/events/soft-texture.png')]"></div>
-        <div className="container mx-auto px-4 text-center relative">
-          <h1 className="text-5xl font-bold mb-4 text-[#5e2b2a] tracking-tight">
-            {event.title}
-          </h1>
-          <p className="text-2xl italic font-light text-[#7a3f3e]">
-            Annual Cultural and Social Awareness Festival
-          </p>
-          <div className="mt-8 h-px w-32 mx-auto bg-[#7a3f3e] bg-opacity-50"></div>
+        <div className="container mx-auto px-4 relative">
+          <div className="mb-6">
+            <BackButton variant="ghost" className="text-[#5e2b2a] hover:bg-[#5e2b2a] hover:text-[#ffc3c0]" />
+          </div>
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-4 text-[#5e2b2a] tracking-tight">
+              {event.title}
+            </h1>
+            <p className="text-2xl italic font-light text-[#7a3f3e]">
+              Annual Cultural and Social Awareness Festival
+            </p>
+            <div className="mt-8 h-px w-32 mx-auto bg-[#7a3f3e] bg-opacity-50"></div>
+          </div>
         </div>
       </header>
 

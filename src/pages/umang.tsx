@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { BackButton } from '../components/ui/back-button';
 
 
 type GalleryImage = {
@@ -109,14 +110,19 @@ export const Umang = () => {
     <div className="min-h-screen font-serif bg-[#FFF5F4]">
       {/* Header */}
       <header className="py-12 bg-[#0D5760]">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-4 text-[#FFE5E3] tracking-tight">
-            {umangData.name}
-          </h1>
-          <p className="text-2xl italic font-light text-[#FFC3C0]">
-            Supporting Those in Need
-          </p>
-          <div className="mt-6 h-px w-32 mx-auto bg-[#FFC3C0] bg-opacity-50"></div>
+        <div className="container mx-auto px-4">
+          <div className="mb-6">
+            <BackButton variant="ghost" className="text-[#FFE5E3] hover:bg-[#FFE5E3] hover:text-[#0D5760]" />
+          </div>
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-4 text-[#FFE5E3] tracking-tight">
+              {umangData.name}
+            </h1>
+            <p className="text-2xl italic font-light text-[#FFC3C0]">
+              Supporting Those in Need
+            </p>
+            <div className="mt-6 h-px w-32 mx-auto bg-[#FFC3C0] bg-opacity-50"></div>
+          </div>
         </div>
       </header>
 

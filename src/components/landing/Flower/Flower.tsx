@@ -30,13 +30,13 @@ const Flower = forwardRef<HTMLDivElement, FlowerProps>(
         if (!stemPath) return;
 
         const pathLength = stemPath.getTotalLength();
-        
+
         // Ensure the path is set up correctly for animation
         gsap.set(stemPath, {
           strokeDasharray: pathLength,
           strokeDashoffset: pathLength,
         });
-        
+
         gsap.fromTo(
           stemPath,
           {
@@ -45,9 +45,9 @@ const Flower = forwardRef<HTMLDivElement, FlowerProps>(
           {
             scrollTrigger: {
               trigger: `.${styles.container}`,
-              start: "44% 20%",
-              end: "170% 20%",
-              markers: false,
+              start: "44% 25%",
+              end: "170% 25%",
+              markers: true,
               scrub: 2,
             },
             strokeDashoffset: 0,

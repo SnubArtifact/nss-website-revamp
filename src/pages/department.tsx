@@ -6,6 +6,7 @@ import { Footer } from "../components/footer";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { departments } from "../lib/departments";
+import { BackButton } from "../components/ui/back-button";
 
 export function DepartmentPage() {
   const { slug } = useParams();
@@ -73,6 +74,10 @@ export function DepartmentPage() {
         {/* Main Content */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Back Button */}
+            <div className="mb-8">
+              <BackButton variant="outline" className="text-gray-800 border-gray-800 hover:bg-gray-800 hover:text-white" />
+            </div>
             {/* Mission Section */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
