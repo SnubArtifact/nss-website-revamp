@@ -5,12 +5,19 @@ import { Toaster } from "./components/ui/toaster";
 import Home from "./pages/home";
 import { queryClient } from "./lib/queryClient";
 import { DepartmentsPage } from "./pages/departments";
-import { EventsPage } from "./pages/events";
+
 import { OfficeBearersPage } from "./pages/office-bearers";
 
 import { GalleryPage } from "./pages/gallery";
-import { DepartmentPage } from "./pages/department";
-import SchoolDepartment from "./components/DepartmentPages/school";
+import {School} from "./pages/school"
+import {Umang} from "./pages/umang";
+import {Parisodh} from "./pages/parisodh";
+import {HealthPublicAwareness} from "./pages/healthpublicawareness";
+import {SponsorshipCollaboration} from "./pages/departmentofsponsorshipandcollaboration";
+import {DesignDevelopment} from "./pages/d3";
+import {ComputerLiteracyProgramme} from "./pages/clp";
+import {Events} from "./pages/events";
+import {Junoon} from "./pages/junoon";
 
 function App() {
   return (
@@ -20,11 +27,20 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/departments" element={<DepartmentsPage />} />
-          <Route path="/departments/:slug" element={<DepartmentPage />} />
-          <Route path="/events" element={<EventsPage />} />
-          <Route path="/office-bearers" element={<OfficeBearersPage />} />
           
+          <Route path="/office-bearers" element={<OfficeBearersPage />} />
+         
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/school" element={<School />} />
+          <Route path="/umang" element={<Umang />} />
+          <Route path="/parisodh" element={<Parisodh />} />
+          <Route path="/health-public-awareness" element={<HealthPublicAwareness />} />
+          <Route path="/department-of-sponsorship-and-collaboration" element={<SponsorshipCollaboration />} />
+          <Route path="/department-of-design-and-development" element={<DesignDevelopment />} />
+          <Route path="/computer-literacy-programme" element={<ComputerLiteracyProgramme />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/junoon" element={<Junoon />} />
+         
         </Routes>
       </TooltipProvider>
     </QueryClientProvider>

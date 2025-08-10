@@ -168,9 +168,9 @@ export function EventsSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Events</h2>
+          <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">Events</h2>
           <div className="w-24 h-1 gradient-bg mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Stay updated with our latest events, workshops, and community
             service opportunities.
           </p>
@@ -185,6 +185,9 @@ export function EventsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
+              onClick={() =>
+                window.location.href = `/${event.title.toLowerCase().replace(/\s+/g, '-')}`
+              }
             >
               <Dialog>
                 <DialogTrigger asChild>
@@ -211,28 +214,22 @@ export function EventsSection() {
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
                         <div
-                          className={`w-12 h-12 ${getEventColor(
-                            event.title
-                          )} rounded-xl flex items-center justify-center flex-shrink-0`}
-                        >
+                          >
                           <i
                             className={`${getEventIcon(
                               event.title
-                            )} text-white`}
+                            )} text-black`}
                           ></i>
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                          <h3 className="text-xl font-serif font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                             {event.title}
                           </h3>
                           <p className="text-gray-600 mb-4 line-clamp-2">
                             {event.description}
                           </p>
                           <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                            <div className="flex items-center">
-                              <i className="fas fa-calendar mr-2"></i>
-                              <span>{formatDate(event.date)}</span>
-                            </div>
+                           
                             <div className="flex items-center">
                               <i className="fas fa-map-marker-alt mr-2"></i>
                               <span>{event.location}</span>
@@ -243,7 +240,7 @@ export function EventsSection() {
                     </CardContent>
                   </Card>
                 </DialogTrigger>
-                <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+               {/* <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
                   <DialogHeader>
                     <DialogTitle className="text-2xl font-bold text-gray-900">
                       {event.title}
@@ -280,9 +277,9 @@ export function EventsSection() {
                         Register Now
                       </Button>
                       <Button variant="outline">Share Event</Button>
-                    </div> */}
+                    </div> 
                   </div>
-                </DialogContent>
+                </DialogContent>*/}
               </Dialog>
             </motion.div>
           ))}
