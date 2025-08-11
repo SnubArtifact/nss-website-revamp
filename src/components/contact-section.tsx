@@ -85,26 +85,21 @@ export function ContactSection() {
 
   const socialLinks = [
     {
-      icon: "fab fa-facebook-f",
-      color: "bg-blue-600 hover:bg-blue-700",
-      href: "#",
-    },
-    {
       icon: "fab fa-twitter",
       color: "bg-blue-400 hover:bg-blue-500",
-      href: "#",
+      href: "https://twitter.com/nssbits",
     },
     {
       icon: "fab fa-instagram",
       color: "bg-pink-600 hover:bg-pink-700",
-      href: "#",
+      href: "https://www.instagram.com/nssbitspilani/",
     },
     {
       icon: "fab fa-linkedin-in",
       color: "bg-blue-800 hover:bg-blue-900",
-      href: "#",
+      href: "https://linkedin.com/company/nss-bits-pilani",
     },
-    { icon: "fab fa-youtube", color: "bg-red-600 hover:bg-red-700", href: "#" },
+    { icon: "fab fa-youtube", color: "bg-red-600 hover:bg-red-700", href: "https://www.youtube.com/@nssbits" },
   ];
 
   return (

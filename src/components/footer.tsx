@@ -10,10 +10,10 @@ export function Footer() {
   ];
 
   const socialLinks = [
-    { icon: "fab fa-facebook-f", href: "#" },
-    { icon: "fab fa-twitter", href: "#" },
-    { icon: "fab fa-instagram", href: "#" },
-    { icon: "fab fa-linkedin-in", href: "#" },
+    { icon: "fab fa-twitter", href: "https://twitter.com/nssbits" },
+    { icon: "fab fa-instagram", href: "https://www.instagram.com/nssbitspilani/" },
+    { icon: "fab fa-linkedin-in", href: "https://linkedin.com/company/nss-bits-pilani" },
+    { icon: "fab fa-youtube", href: "https://www.youtube.com/@nssbits" },
   ];
 
   const handleLinkClick = (href: string) => {

@@ -87,7 +87,6 @@ export default function Landing() {
         />
       </div> */}
 
-      
       <div className={styles.content}>
         <div className={styles.title1}>
           <h1>
@@ -104,13 +103,13 @@ export default function Landing() {
         <Flower ref={flowerRef} />
         <div className={styles.title2}>
           <h1>
-            <StaggeredText text="Byline" />
+            <StaggeredText text="NSS" />
           </h1>
           <h1>
-            <StaggeredText text="Number" />
+            <StaggeredText text="BITS" />
           </h1>
           <h1>
-            <StaggeredText text="Two" />
+            <StaggeredText text="Pilani" />
           </h1>
         </div>
       </div>
