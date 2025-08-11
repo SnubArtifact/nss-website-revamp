@@ -172,15 +172,15 @@ Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on s
           </div>
           
           {/* Carousel */}
-          <div className="relative mb-12 h-80 md:h-96 rounded-lg overflow-hidden shadow-inner">
-            {galleryImages.map((image, index) => (
-              <div 
-                key={image.id}
-                className={`absolute inset-0 transition-opacity duration-1000 flex items-center justify-center ${
-                  index === currentSlide ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+          <div className="relative mb-12 rounded-lg overflow-hidden shadow-inner">
+            <div className="aspect-[16/9]">
+              {galleryImages.map((image, index) => (
+                <div 
+                  key={image.id}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${
+                    index === currentSlide ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
                   <img 
                     src={image.src} 
                     alt={image.alt}
@@ -191,13 +191,12 @@ Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on s
                       target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRkZGNUY0Ii8+CjxwYXRoIGQ9Ik0zNTAgMjUwSDQ1MFYzNTBIMzUwVjI1MFoiIGZpbGw9IiNGRkMzQzAiLz4KPHA+CjwhLS0gSW1hZ2UgaWNvbiAtLT4KPHA+CjxwYXRoIGQ9Ik0zNzAgMjcwSDQzMFYzMDBIMzcwVjI3MFoiIGZpbGw9IiNGRjlBOUIiLz4KPHA+CjxwYXRoIGQ9Ik0zNzAgMzEwSDQzMFYzMjBIMzcwVjMxMFoiIGZpbGw9IiNGRjlBOUIiLz4KPHA+CjxwYXRoIGQ9Ik0zNzAgMzMwSDQxMFYzNDBIMzcwVjMzMFoiIGZpbGw9IiNGRjlBOUIiLz4KPHA+CjxwYXRoIGQ9Ik0zODcgMjg3QzM5MC4zMTQgMjg3IDM5MyAyODQuMzE0IDM5MyAyODFDMzkzIDI3Ny42ODYgMzkwLjMxNCAyNzUgMzg3IDI3NUMzODMuNjg2IDI3NSAzODEgMjc3LjY4NiAzODEgMjgxQzM4MSAyODQuMzE0IDM4My42ODYgMjg3IDM4NyAyODdaIiBmaWxsPSIjRkY5QTlCIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iNDIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkY5QTlCIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+Cjwvc3ZnPgo=';
                     }}
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
+                    <p className="text-xl text-white font-medium">{image.alt}</p>
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                  <p className="text-xl text-white font-medium">{image.alt}</p>
-                </div>
-              </div>
-            ))}
+              ))}
             
             <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
               {galleryImages.map((_, index) => (
@@ -210,6 +209,7 @@ Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on s
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
+            </div>
             </div>
           </div>
         </section>

@@ -1,6 +1,12 @@
+import { useLocation, useNavigate } from "react-router-dom";
+import { useScrollSmoother } from "../hooks/use-scroll-smoother";
 import { Button } from "./ui/button";
 
 export function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { smootherRef } = useScrollSmoother();
+
   const quickLinks = [
     { href: "#about", label: "About NSS" },
     { href: "#activities", label: "Our Activities" },
@@ -17,9 +23,31 @@ export function Footer() {
   ];
 
   const handleLinkClick = (href: string) => {
-    const element = document.querySelector(href);
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== "/") {
+      navigate("/" + href, { replace: true });
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        scrollToSection(href);
+      }, 500);
+    } else {
+      // Already on home page, just scroll directly
+      scrollToSection(href);
+    }
+  };
+
+  const scrollToSection = (href: string) => {
+    const sectionId = href.replace("#", "");
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      const offset = 80; // Account for fixed navbar height
+
+      // Use ScrollSmoother if available, otherwise fallback to native scroll
+      if (smootherRef?.current) {
+        smootherRef.current.scrollTo(element, true);
+      } else {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
 
