@@ -39,12 +39,10 @@ export const Events = () => {
   
  
   const galleryImages: GalleryImage[] = [
-    { id: 1, src: '/images/annual-festival.jpg', alt: 'Annual festival celebration', category: 'festival' },
-    { id: 2, src: '/images/awareness-campaign.jpg', alt: 'Social awareness campaign', category: 'campaign' },
-    { id: 3, src: '/images/workshop-event.jpg', alt: 'Community workshop in progress', category: 'workshop' },
-    { id: 4, src: '/images/cultural-event.jpg', alt: 'Cultural performance at event', category: 'cultural' },
-    { id: 5, src: '/images/event-planning.jpg', alt: 'Event planning meeting', category: 'planning' },
-    { id: 6, src: '/images/volunteer-coordination.jpg', alt: 'Volunteers coordinating event', category: 'volunteers' },
+    { id: 1, src: '/events/bdc1.jpg', alt: 'Blood Donation Camp', category: 'campaign' },
+    { id: 2, src: '/events/cdy1.jpg', alt: 'Conferencia de Youth', category: 'workshop' },
+    { id: 3, src: '/events/junoon1.jpg', alt: 'Junoon', category: 'cultural' },
+   
   ];
 
   //  coordinators data
@@ -177,7 +175,7 @@ export const Events = () => {
                 <img 
                   src={image.src} 
                   alt={image.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-fit "
                   onError={(e) => {
                     e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0zNTAgMjUwSDQ1MFYzNTBIMzUwVjI1MFoiIGZpbGw9IiNEMUQ1REIiLz4KPHA+CjwhLS0gSW1hZ2UgaWNvbiAtLT4KPHA+CjxwYXRoIGQ9Ik0zNzAgMjcwSDQzMFYzMDBIMzcwVjI3MFoiIGZpbGw9IiM5Q0E0QUYiLz4KPHA+CjxwYXRoIGQ9Ik0zNzAgMzEwSDQzMFYzMjBIMzcwVjMxMFoiIGZpbGw9IiM5Q0E0QUYiLz4KPHA+CjxwYXRoIGQ9Ik0zNzAgMzMwSDQxMFYzNDBIMzcwVjMzMFoiIGZpbGw9IiM5Q0E0QUYiLz4KPHA+CjxwYXRoIGQ9Ik0zODcgMjg3QzM5MC4zMTQgMjg3IDM5MyAyODQuMzE0IDM5MyAyODFDMzkzIDI3Ny42ODYgMzkwLjMxNCAyNzUgMzg3IDI3NUMzODMuNjg2IDI3NSAzODEgMjc3LjY4NiAzODEgMjgxQzM4MSAyODQuMzE0IDM4My42ODYgMjg3IDM4NyAyODdaIiBmaWxsPSIjOUNBNEFGIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iNDIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOUNBNEFGIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+Cjwvc3ZnPgo=';
                   }}

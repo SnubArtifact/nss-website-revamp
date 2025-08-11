@@ -144,7 +144,7 @@ export const Junoon = () => {
           </div>
           
           {/* Carousel */}
-          <div className="relative mb-12 h-80 md:h-[32rem] rounded-xl overflow-hidden shadow-inner">
+          {/*<div className="relative mb-12 h-80 md:h-[32rem] rounded-xl overflow-hidden shadow-inner">
             {galleryImages.map((image, index) => (
               <div 
                 key={image.id}
@@ -177,6 +177,7 @@ export const Junoon = () => {
               ))}
             </div>
           </div>
+          */}
         </section>
 
         {/* Registration CTA */}

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BackButton } from '../components/ui/back-button';
 
-
 type GalleryImage = {
   id: number;
   src: string;
@@ -37,7 +36,6 @@ export const SponsorshipCollaboration = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
   
- 
   const galleryImages: GalleryImage[] = [
     { id: 1, src: '/images/corporate-partnership.jpg', alt: 'Corporate partnership signing', category: 'partnership' },
     { id: 2, src: '/images/grant-management.jpg', alt: 'Grant management workshop', category: 'grants' },
@@ -45,13 +43,11 @@ export const SponsorshipCollaboration = () => {
     { id: 4, src: '/images/collaboration-event.jpg', alt: 'Collaboration event with partners', category: 'events' },
   ];
 
-  //  coordinators data
+  // coordinators data
   const coordinators: Coordinator[] = [
     { name: "Soumya Yadav", position: "Department of Sponsorship and Collaboration Coordinator" },
-   
   ];
 
-  
   const sponsorshipData: SponsorshipData = {
     name: "Department of Sponsorship and Collaboration",
     description: "Managing partnerships and sponsorship initiatives, building strategic partnerships and collaboration opportunities.",
@@ -63,33 +59,32 @@ export const SponsorshipCollaboration = () => {
       activities: [
         {
           title: "Raising funds for NSS flagship events",
-description: `To raise adequate sponsorship funds and resources to support NSS BITS Pilani’s annual flagship events, including-
+          description: `To raise adequate sponsorship funds and resources to support NSS BITS Pilani's annual flagship events, including-
 
 Junoon – An inclusive fest for specially-abled children.
 
-
-Oasis: Shop for a Smile – A fundraising and awareness initiative held during the college’s cultural fest.
+Oasis: Shop for a Smile – A fundraising and awareness initiative held during the college's cultural fest.
 
 Blood Donation Camp (BDC) – A large-scale medical and awareness event encouraging voluntary blood donation.
 
-Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on social issues.
-.`,
+Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on social issues.`,
         },
         {
           title: "Long term collaborations",
           description: "To establish long-term collaborations with corporate entities, non-profits, and local businesses that align with the vision and values of NSS.",
         },
-        {title:"Seamless operational flow",
+        {
+          title: "Seamless operational flow",
           description: "To maintain a seamless operational flow for all events by ensuring timely access to financial and logistical support.",
         },
-        {title: "Skill promotion",
+        {
+          title: "Skill promotion",
           description: "To promote professionalism, negotiation, and communication skills among students by actively involving them in real-world sponsorship and collaboration processes.",
         },
       ]
     }
   };
 
-  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
@@ -97,16 +92,12 @@ Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on s
     return () => clearInterval(interval);
   }, [galleryImages.length]);
 
-  
-
-  // Toggle activity expansion
   const toggleActivity = (index: number) => {
     setExpandedActivity(expandedActivity === index ? null : index);
   };
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
-      
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4">
           <div className="mb-6">
@@ -189,14 +180,18 @@ Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on s
                   index === currentSlide ? 'opacity-100' : 'opacity-0'
                 }`}
               >
-                <img 
-                  src={image.src} 
-                  alt={image.alt}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0zNTAgMjUwSDQ1MFYzNTBIMzUwVjI1MFoiIGZpbGw9IiNEMUQ1REIiLz4KPHA+CjwhLS0gSW1hZ2UgaWNvbiAtLT4KPHA+CjxwYXRoIGQ9Ik0zNzAgMjcwSDQzMFYzMDBIMzcwVjI3MFoiIGZpbGw9IiM5Q0E0QUYiLz4KPHA+CjxwYXRoIGQ9Ik0zNzAgMzEwSDQzMFYzMjBIMzcwVjMxMFoiIGZpbGw9IiM5Q0E0QUYiLz4KPHA+CjxwYXRoIGQ9Ik0zNzAgMzMwSDQxMFYzNDBIMzcwVjMzMFoiIGZpbGw9IiM5Q0E0QUYiLz4KPHA+CjxwYXRoIGQ9Ik0zODcgMjg3QzM5MC4zMTQgMjg3IDM5MyAyODQuMzE0IDM5MyAyODFDMzkzIDI3Ny42ODYgMzkwLjMxNCAyNzUgMzg3IDI3NUMzODMuNjg2IDI3NSAzODEgMjc3LjY4NiAzODEgMjgxQzM4MSAyODQuMzE0IDM4My42ODYgMjg3IDM4NyAyODdaIiBmaWxsPSIjOUNBNEFGIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iNDIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOUNBNEFGIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+Cjwvc3ZnPgo=';
-                  }}
-                />
+                <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.onerror = null;
+                      target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRkZGNUY0Ii8+CjxwYXRoIGQ9Ik0zNTAgMjUwSDQ1MFYzNTBIMzUwVjI1MFoiIGZpbGw9IiNGRkMzQzAiLz4KPHA+CjwhLS0gSW1hZ2UgaWNvbiAtLT4KPHA+CjxwYXRoIGQ9Ik0zNzAgMjcwSDQzMFYzMDBIMzcwVjI3MFoiIGZpbGw9IiNGRjlBOUIiLz4KPHA+CjxwYXRoIGQ9Ik0zNzAgMzEwSDQzMFYzMjBIMzcwVjMxMFoiIGZpbGw9IiNGRjlBOUIiLz4KPHA+CjxwYXRoIGQ9Ik0zNzAgMzMwSDQxMFYzNDBIMzcwVjMzMFoiIGZpbGw9IiNGRjlBOUIiLz4KPHA+CjxwYXRoIGQ9Ik0zODcgMjg3QzM5MC4zMTQgMjg3IDM5MyAyODQuMzE0IDM5MyAyODFDMzkzIDI3Ny42ODYgMzkwLjMxNCAyNzUgMzg3IDI3NUMzODMuNjg2IDI3NSAzODEgMjc3LjY4NiAzODEgMjgxQzM4MSAyODQuMzE0IDM4My42ODYgMjg3IDM4NyAyODdaIiBmaWxsPSIjRkY5QTlCIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iNDIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkY5QTlCIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+Cjwvc3ZnPgo=';
+                    }}
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
                   <p className="text-xl text-white font-medium">{image.alt}</p>
@@ -217,10 +212,7 @@ Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on s
               ))}
             </div>
           </div>
-          
-     
         </section>
-
       </main>
     </div>
   );

@@ -39,12 +39,11 @@ export const HealthPublicAwareness = () => {
   
   
   const galleryImages: GalleryImage[] = [
-    { id: 1, src: '/images/health-camp.jpg', alt: 'Health camp in progress', category: 'camp' },
-    { id: 2, src: '/images/clothes-distribution.jpg', alt: 'Clothes distribution event', category: 'donation' },
-    { id: 3, src: '/images/skill-workshop.jpg', alt: 'Skill development workshop', category: 'education' },
-    { id: 4, src: '/images/health-lecture.jpg', alt: 'Health awareness lecture', category: 'awareness' },
-    { id: 5, src: '/images/community-survey.jpg', alt: 'Community survey being conducted', category: 'survey' },
-    { id: 6, src: '/images/policy-documentation.jpg', alt: 'Policy documentation work', category: 'documentation' },
+    { id: 1, src: '/events/hpa1.jpg', alt: 'Health camp in progress', category: 'camp' },
+    { id: 2, src: '/events/hpa2.jpg', alt: 'Clothes distribution event', category: 'donation' },
+    { id: 3, src: '/events/hpa3.jpg', alt: 'Health camp', category: 'camp' },
+    { id: 4, src: '/events/hpa4.jpg', alt: 'Our soldiers at work', category: 'awareness' },
+   
   ];
 
   // coordinators data

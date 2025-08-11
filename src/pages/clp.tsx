@@ -39,12 +39,11 @@ export const ComputerLiteracyProgramme = () => {
   
   
   const galleryImages: GalleryImage[] = [
-    { id: 1, src: '/images/computer-class.jpg', alt: 'Computer literacy class in session', category: 'training' },
-    { id: 2, src: '/images/digital-literacy.jpg', alt: 'Teaching digital literacy to adults', category: 'adults' },
-    { id: 3, src: '/images/kids-computers.jpg', alt: 'Children learning computer skills', category: 'children' },
-    { id: 4, src: '/images/community-training.jpg', alt: 'Community computer training session', category: 'community' },
-    { id: 5, src: '/images/computer-lab.jpg', alt: 'CLP computer lab setup', category: 'infrastructure' },
-    { id: 6, src: '/images/volunteer-teaching.jpg', alt: 'Volunteer teaching computer skills', category: 'volunteers' },
+    { id: 1, src: '/events/clp1.jpg', alt: 'Computer literacy class in session', category: 'training' },
+    { id: 2, src: '/events/clp2.jpg', alt: 'Teaching digital literacy to children', category: 'training' },
+    { id: 3, src: '/events/clp3.jpg', alt: 'Children learning computer skills', category: 'training' },
+    { id: 4, src: '/events/clp4.jpg', alt: 'Community computer training session', category: 'training' },
+    
   ];
 
   // coordinators data
