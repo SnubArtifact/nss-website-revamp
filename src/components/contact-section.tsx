@@ -1,10 +1,8 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { z } from "zod";
-import { insertContactSchema } from "../../shared/schema";
 import { useToast } from "../hooks/use-toast";
 import { CONTACT_SUBJECTS } from "../lib/constants";
-import { apiRequest } from "../lib/queryClient";
+import { sendContactEmail, sendEmailViaMailto, type ContactFormData } from "../lib/email";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Input } from "./ui/input";
@@ -18,7 +16,14 @@ import {
 } from "./ui/select";
 import { Textarea } from "./ui/textarea";
 
-type ContactFormData = z.infer<typeof insertContactSchema>;
+// Define validation schema
+const contactFormSchema = z.object({
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
+  email: z.string().email("Please enter a valid email address"),
+  subject: z.string().min(1, "Please select a subject"),
+  message: z.string().min(10, "Message must be at least 10 characters long"),
+});
 
 export function ContactSection() {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -30,52 +35,67 @@ export function ContactSection() {
   });
 
   const { toast } = useToast();
-  const queryClient = useQueryClient();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message Sent!",
-        description:
-          "Thank you for your message. We will get back to you soon.",
-      });
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-      queryClient.invalidateQueries({ queryKey: ["/api/contacts"] });
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Error",
-        description:
-          error.message || "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     try {
-      const validatedData = insertContactSchema.parse(formData);
-      contactMutation.mutate(validatedData);
+      // Validate form data
+      const validatedData = contactFormSchema.parse(formData);
+      
+      // Try to send email using EmailJS first
+      try {
+        await sendContactEmail(validatedData);
+        
+        // Success message
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. We will get back to you soon.",
+        });
+        
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+        
+      } catch (emailError) {
+        // Fallback to mailto if EmailJS fails
+        console.warn('EmailJS failed, falling back to mailto:', emailError);
+        
+        toast({
+          title: "Opening Email Client",
+          description: "We'll open your default email app to send the message. If this doesn't work, please email us directly at atharv20agarwal@gmail.com",
+        });
+        
+        // Small delay to show the toast
+        setTimeout(() => {
+          sendEmailViaMailto(validatedData);
+        }, 1500);
+      }
+      
     } catch (error) {
       if (error instanceof z.ZodError) {
+        const firstError = error.errors[0];
         toast({
           title: "Validation Error",
-          description: "Please fill in all required fields correctly.",
+          description: firstError.message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again.",
           variant: "destructive",
         });
       }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -187,6 +207,9 @@ export function ContactSection() {
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
                   Send us a Message
                 </h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.
+                </p>
                 <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
                   <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
@@ -271,10 +294,10 @@ export function ContactSection() {
                   <Button
                     type="submit"
                     className="w-full gradient-bg text-white font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                    disabled={contactMutation.isPending}
+                    disabled={isSubmitting}
                     size="lg"
                   >
-                    {contactMutation.isPending ? (
+                    {isSubmitting ? (
                       <>
                         <i className="fas fa-spinner fa-spin mr-2"></i>
                         Sending...
