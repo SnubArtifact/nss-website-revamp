@@ -1,12 +1,8 @@
-import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useMobileMenu } from "../hooks/use-mobile-menu";
 import { useScrollSmoother } from "../hooks/use-scroll-smoother";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-
-gsap.registerPlugin(ScrollToPlugin);
 
 const navigationLinks = [
   { href: "/", label: "Home", isSection: false },
@@ -50,18 +46,11 @@ export function Navigation() {
     if (element) {
       const offset = 80; // Account for fixed navbar height
 
-      // Use ScrollSmoother if available, otherwise fallback to GSAP scrollTo
+      // Use ScrollSmoother if available, otherwise fallback to native scroll
       if (smootherRef?.current) {
         smootherRef.current.scrollTo(element, true);
       } else {
-        gsap.to(window, {
-          duration: 1.2,
-          scrollTo: {
-            y: element,
-            // offsetY: offset,
-          },
-          ease: "power2.inOut",
-        });
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
   };

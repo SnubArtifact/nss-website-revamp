@@ -1,174 +1,18 @@
 import { OBJECTIVES } from "../lib/constants";
 import { Card, CardContent } from "./ui/card";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
-import { useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export function AboutSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const missionRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    const tl = gsap.timeline();
-
-    // Background color animation
-    gsap.fromTo(sectionRef.current, 
-      {
-        backgroundColor: "#0d5752"
-      },
-      {
-        backgroundColor: "#fed7aa",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 90%",  
-          end: "top 20%",    
-          scrub: 1,         
-          toggleActions: "play none none reverse"
-        },
-        duration: 1
-      }
-    );
-
-    // Header animation
-    if (headerRef.current) {
-      gsap.fromTo(headerRef.current.children, 
-        {
-          y: 50,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: headerRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    }
-
-    // Image animation with parallax effect
-    gsap.fromTo(imageRef.current, 
-      {
-        x: -100,
-        opacity: 0,
-        scale: 0.8,
-        rotation: -5
-      },
-      {
-        x: 0,
-        opacity: 1,
-        scale: 1,
-        rotation: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: imageRef.current,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    // Parallax effect for image
-    gsap.to(imageRef.current, {
-      y: -50,
-      scrollTrigger: {
-        trigger: imageRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1
-      }
-    });
-
-    // Mission content animation
-    if (missionRef.current) {
-      gsap.fromTo(missionRef.current.children, 
-        {
-          x: 100,
-          opacity: 0
-        },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: missionRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    }
-
-    
-    if (cardsRef.current) {
-      gsap.fromTo(cardsRef.current.children, 
-        {
-          y: 80,
-          opacity: 0,
-          scale: 0.8,
-          rotationY: 15
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          rotationY: 0,
-          duration: 1.2,
-          stagger: 0.2,
-          ease: "back.out(1.7)",
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-      
-      gsap.to(cardsRef.current.children, {
-        y: -10,
-        duration: 2,
-        ease: "power2.inOut",
-        yoyo: true,
-        repeat: -1,
-        stagger: 0.3,
-        scrollTrigger: {
-          trigger: cardsRef.current,
-          start: "top 50%",
-          end: "bottom 50%",
-          toggleActions: "play pause resume pause"
-        }
-      });
-    }
-      
-
-  }, []);
 
 
   return (
     <section
-      ref={sectionRef}
       id="about"
       className="py-12 sm:py-16 lg:py-20 scroll-mt-20 overflow-hidden"
-      style={{ backgroundColor: "#0d5752" }}
+      style={{ backgroundColor: "#fed7aa" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div ref={headerRef} className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-black mb-4">
             About NSS BITS Pilani
           </h2>
@@ -183,7 +27,7 @@ export function AboutSection() {
         
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center mb-12 sm:mb-16">
           <div className="order-2 lg:order-1">
-            <div ref={imageRef} className="relative">
+            <div className="relative">
               <img
                 style={{ 
                   borderRadius: "1rem", 
@@ -198,7 +42,7 @@ export function AboutSection() {
             </div>
           </div>
 
-          <div ref={missionRef} className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2">
             <h3 className="text-2xl sm:text-3xl font-serif font-bold text-black mb-4 sm:mb-6">
               Our Mission
             </h3>
@@ -227,7 +71,7 @@ export function AboutSection() {
 
 {/*objectives section*/}
         
-        <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"> 
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {OBJECTIVES.map((objective, index) => (
             <div key={index} className="card-container">
               <Card className="bg-[#e2c19aff] border-0 h-full relative overflow-hidden group cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 
 export function HeroSection() {
@@ -29,11 +28,7 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
+        <div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             National Service Scheme
             <span className="block text-2xl sm:text-3xl lg:text-4xl text-yellow-400 font-normal mt-2">
@@ -63,17 +58,13 @@ export function HeroSection() {
               Watch Our Story
             </Button>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      >
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <i className="fas fa-chevron-down text-white text-2xl"></i>
-      </motion.div>
+      </div>
     </section>
   );
 }

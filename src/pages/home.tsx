@@ -1,6 +1,5 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import { ScrollSmoother, ScrollTrigger, ScrollToPlugin } from "gsap/all";
+import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { AboutSection } from "../components/about-section";
@@ -84,19 +83,6 @@ export default function Home() {
     }
   }, [location.pathname, location.hash]);
 
-  useGSAP(() => {
-    // Content is at full opacity from the start - no animations
-    gsap.set(mainContentRef.current, {
-      opacity: 1,
-    });
-    
-    // Set all sections to be visible immediately
-    const sections = gsap.utils.toArray(".content-section");
-    gsap.set(sections, {
-      opacity: 1,
-      y: 0,
-    });
-  }, []);
 
   return (
     <>

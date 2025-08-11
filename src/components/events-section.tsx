@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useState } from "react";
 import { Event } from "../../shared/schema";
 import { events } from "../lib/events.ts";
@@ -179,12 +178,8 @@ export function EventsSection() {
         {/* All Events Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {events.map((event, index) => (
-            <motion.div
+            <div
               key={event.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
               onClick={() =>
                 window.location.href = `/${event.title.toLowerCase().replace(/\s+/g, '-')}`
               }
@@ -281,7 +276,7 @@ export function EventsSection() {
                   </div>
                 </DialogContent>*/}
               </Dialog>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
