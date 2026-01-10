@@ -133,19 +133,19 @@ export const professors: Professor[] = [
     name: "Prof. Prashant Uday Manohar",
     position: "Programme Officer",
     email: "prashant.manohar@pilani.bits-pilani.ac.in",
-    imageUrl: "/profs/prashant-uday.jpg"
+    imageUrl: "/profs/prashant-uday.jpeg"
   },
   {
     name: "Prof. Sudeshna Mukherjee",
     position: "Programme Officer",
     email: "sudeshna.chowdhury@pilani.bits-pilani.ac.in",
-    imageUrl: "/profs/sudheshna.jpg"
+    imageUrl: "/profs/sudheshna.jpeg"
   },
   {
     name: "Prof. Chandra Shekhar",
     position: "Programme Officer",
     email: "chandra.shekhar@pilani.bits-pilani.ac.in",
-    imageUrl: "/profs/chandrashekhar.jpg"
+    imageUrl: "/profs/chandrashekar.jpeg"
   },
   {
     name: "Prof. Anirudh Singh Rana",
