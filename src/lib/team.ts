@@ -60,7 +60,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Arin Samant",
     position: "Computer Literacy Programme Coordinator",
-    // imageUrl: "/2023/mansi.jpeg",
+    imageUrl: "/2023/arin.jpeg",
   },
   // Umang Department
   {
@@ -76,7 +76,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Siya Madan",
     position: "Umang Coordinator",
-    // imageUrl: "/2023/aarushi.jpeg",
+    imageUrl: "/2023/siya.jpeg",
   },
   // Events Department
   {
@@ -127,7 +127,7 @@ export const professors: Professor[] = [
     name: "Prof. Meghana Tare",
     position: "Program Coordinator",
     email: "meghana.tare@pilani.bits-pilani.ac.in",
-    imageUrl: "/profs/meghana.png"
+    imageUrl: "/profs/meghna.jpeg"
   },
   {
     name: "Prof. Prashant Uday Manohar",
@@ -139,7 +139,7 @@ export const professors: Professor[] = [
     name: "Prof. Sudeshna Mukherjee",
     position: "Programme Officer",
     email: "sudeshna.chowdhury@pilani.bits-pilani.ac.in",
-    imageUrl: "/profs/sudeshna.jpg"
+    imageUrl: "/profs/sudheshna.jpg"
   },
   {
     name: "Prof. Chandra Shekhar",
@@ -151,24 +151,24 @@ export const professors: Professor[] = [
     name: "Prof. Anirudh Singh Rana",
     position: "Programme Officer",
     email: "anirudh.rana@pilani.bits-pilani.ac.in",
-    imageUrl: "/profs/asr.jpg"
+    imageUrl: "/profs/asr.jpeg"
   },
   {
     name: "Prof. Nirankush Dutta",
     position: "Programme Officer",
     email: "nirankush.dutta@pilani.bits-pilani.ac.in",
-    imageUrl: "/profs/nirankush.jpg"
+    imageUrl: "/profs/nirankush.jpeg"
   },
   {
     name: "Prof. Sandeep Joshi",
     position: "Programme Officer",
     email: "sandeep.joshi@pilani.bits-pilani.ac.in",
-    imageUrl: "/profs/sandeep.jpg"
+    imageUrl: "/profs/sandeep.jpeg"
   },
   {
     name: "Prof. Balakumaran Chandrashekar",
     position: "Programme Officer",
     email: "balakumaran.c@pilani.bits-pilani.ac.in",
-    //imageUrl: "/profs/balakumaran.jpg"
+    imageUrl: "/profs/balakumaran.jpeg"
   }
 ];
