@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { events } from '../lib/events';
+import SEO from '../components/SEO';
 import { BackButton } from '../components/ui/back-button';
+import { events } from '../lib/events';
 
 type GalleryImage = {
   id: number;
@@ -63,6 +64,10 @@ export const Junoon = () => {
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
+      <SEO 
+        title="Junoon - NSS BITS Pilani"
+        description="Sports Extravaganza for Specially-Abled Children. A celebration of inclusion, courage, and determination."
+      />
       {/* Elegant Header */}
       <header className="py-16 bg-[#ffc3c0] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/events/soft-texture.png')]"></div>

@@ -10,6 +10,7 @@ import { Footer } from "../components/footer";
 import Landing from "../components/landing/landing";
 import { Navigation } from "../components/navigation";
 import Preloader from "../components/preloader/Preloader";
+import SEO from "../components/SEO";
 import { TeamSection } from "../components/team-section";
 import { ScrollSmootherProvider } from "../hooks/use-scroll-smoother";
 
@@ -88,6 +89,10 @@ export default function Home() {
 
   return (
     <>
+      <SEO 
+        title="NSS BITS Pilani - National Service Scheme"
+        description="Join NSS BITS Pilani in making a positive impact through community service, education support, health camps, environmental initiatives, and social responsibility programs. Not Me, But You."
+      />
       {/* Show preloader only on initial load */}
       {isPreloading && <Preloader onComplete={handlePreloadComplete} />}
 

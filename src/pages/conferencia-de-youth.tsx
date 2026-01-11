@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { events } from '../lib/events';
+import SEO from '../components/SEO';
 import { BackButton } from '../components/ui/back-button';
+import { events } from '../lib/events';
 
 type Activity = {
   title: string;
@@ -76,6 +77,10 @@ export const ConferenciaDeYouth = () => {
 
   return (
     <div className="min-h-screen font-heading bg-gradient-to-br from-blue-50 to-indigo-50">
+      <SEO 
+        title="Conferencia De Youth - NSS BITS Pilani"
+        description="A youth conference fostering dialogue, leadership, and diverse perspectives among students. Empowering Tomorrow's Leaders."
+      />
       {/* Header */}
       <header className="py-16 bg-gradient-to-r from-blue-600 to-indigo-600 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/events/soft-texture.png')]"></div>

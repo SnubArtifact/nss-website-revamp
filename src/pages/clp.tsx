@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SEO from "../components/SEO";
 import { BackButton } from "../components/ui/back-button";
 
 type GalleryImage = {
@@ -134,6 +135,10 @@ export const ComputerLiteracyProgramme = () => {
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
+      <SEO 
+        title="Computer Literacy Programme - NSS BITS Pilani"
+        description="Teaching digital skills and computer literacy to communities, developing digital education programs and training modules."
+      />
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4">
           <div className="mb-6">

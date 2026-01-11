@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { events } from '../lib/events';
+import SEO from '../components/SEO';
 import { BackButton } from '../components/ui/back-button';
+import { events } from '../lib/events';
 
 type Activity = {
   title: string;
@@ -70,6 +71,10 @@ export const BloodDonationCamp = () => {
 
   return (
     <div className="min-h-screen font-heading bg-gradient-to-br from-red-50 to-pink-50">
+      <SEO 
+        title="Blood Donation Camp - NSS BITS Pilani"
+        description="Annual blood donation drive to save lives and support local blood banks. Gift of Life - Donate Blood, Save Lives."
+      />
       {/* Header */}
       <header className="py-16 bg-gradient-to-r from-red-600 to-pink-600 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/events/soft-texture.png')]"></div>

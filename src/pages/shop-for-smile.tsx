@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { events } from '../lib/events';
+import SEO from '../components/SEO';
 import { BackButton } from '../components/ui/back-button';
+import { events } from '../lib/events';
 
 type Activity = {
   title: string;
@@ -70,6 +71,10 @@ export const ShopForSmile = () => {
 
   return (
     <div className="min-h-screen font-heading bg-gradient-to-br from-green-50 to-blue-50">
+      <SEO 
+        title="Shop For Smile - NSS BITS Pilani"
+        description="A charity drive where proceeds from sales go directly to supporting the underprivileged. Making Commerce Meaningful."
+      />
       {/* Header */}
       <header className="py-16 bg-gradient-to-r from-green-500 to-blue-500 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/events/soft-texture.png')]"></div>
