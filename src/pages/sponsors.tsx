@@ -6,58 +6,52 @@ interface Sponsor {
   name: string;
   logoUrl: string;
   websiteUrl?: string;
+  bg?: string; // Optional background color for better visibility if needed
 }
 
-const PLACEHOLDER_LOGO = `data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjODg4Ij5Mb2dvPC90ZXh0Pjwvc3ZnPg==`;
-
+// Logos located in public/sponsors/logo/
 const sponsors: Sponsor[] = [
   {
     id: 1,
-    name: "Tech Solutions Inc.",
-    logoUrl: PLACEHOLDER_LOGO,
-    websiteUrl: "https://example.com",
+    name: "AMD",
+    logoUrl: "/sponsors/logo/amd.svg",
+    websiteUrl: "https://www.amd.com",
   },
   {
     id: 2,
-    name: "Community Builders",
-    logoUrl: PLACEHOLDER_LOGO,
-    websiteUrl: "https://example.org",
+    name: "Klüber Lubrication",
+    logoUrl: "/sponsors/logo/kluber.svg",
+    websiteUrl: "https://www.klueber.com",
   },
   {
     id: 3,
-    name: "Green Earth Foundation",
-    logoUrl: PLACEHOLDER_LOGO,
-    // No website URL for this one
+    name: "Pranic Fruits",
+    logoUrl: "/sponsors/logo/pranic.jpeg",
+    // websiteUrl: "https://pranicfruits.com",
   },
   {
     id: 4,
-    name: "Global Innovations",
-    logoUrl: PLACEHOLDER_LOGO,
-    websiteUrl: "https://example.net",
+    name: "Fortis",
+    logoUrl: "/sponsors/logo/fortis.png",
+    websiteUrl: "https://www.fortishealthcare.com",
   },
   {
     id: 5,
-    name: "Local Heroes",
-    logoUrl: PLACEHOLDER_LOGO,
-    websiteUrl: "https://example.com",
+    name: "LG",
+    logoUrl: "/sponsors/logo/lg.png",
+    websiteUrl: "https://www.lg.com",
   },
   {
     id: 6,
-    name: "Future Vision",
-    logoUrl: PLACEHOLDER_LOGO,
-    // No website URL
+    name: "NHPC",
+    logoUrl: "/sponsors/logo/nhpc.jpeg",
+    websiteUrl: "https://www.nhpcindia.com",
   },
   {
     id: 7,
-    name: "EduCare Systems",
-    logoUrl: PLACEHOLDER_LOGO,
-    websiteUrl: "https://example.edu",
-  },
-  {
-    id: 8,
-    name: "Creative Minds",
-    logoUrl: PLACEHOLDER_LOGO,
-    websiteUrl: "https://example.com",
+    name: "Denso",
+    logoUrl: "/sponsors/logo/denso.png",
+    websiteUrl: "https://www.denso.com",
   },
 ];
 
@@ -108,6 +102,9 @@ export const SponsorsPage = () => {
 
         {/* Sponsors Grid */}
         <section>
+          <h2 className="text-3xl font-bold text-[#0D5760] text-center mb-12">
+            Our Past Sponsors
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
             {sponsors.map((sponsor) => (
               <SponsorCard key={sponsor.id} sponsor={sponsor} />
@@ -122,11 +119,20 @@ export const SponsorsPage = () => {
 const SponsorCard = ({ sponsor }: { sponsor: Sponsor }) => {
   const CardContent = () => (
     <div className="h-full bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-[#0D5760]/20 flex flex-col items-center justify-center gap-4 group">
-      <div className="w-full aspect-square flex items-center justify-center p-4 bg-gray-50 rounded-lg overflow-hidden relative">
+      <div 
+        className={`w-full aspect-video flex items-center justify-center p-4 rounded-lg overflow-hidden relative ${sponsor.bg || 'bg-white'}`}
+      >
         <img
           src={sponsor.logoUrl}
           alt={`${sponsor.name} logo`}
-          className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+          className="w-full h-full object-contain filter transition-all duration-300 group-hover:scale-110"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none';
+            // Show text fallback if image fails, via sibling or parent logic?
+            // Easier to just let the text below handle it, or replace src
+            e.currentTarget.parentElement?.classList.add('bg-gray-100');
+            // But we already have text below.
+          }}
         />
       </div>
       <h3 className="text-lg font-medium text-[#0D5760] text-center">
