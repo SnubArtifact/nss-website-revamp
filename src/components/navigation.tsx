@@ -16,7 +16,7 @@ const navigationLinks = [
   { href: "#activities", label: "Departments", isSection: true },
   { href: "#events", label: "Events", isSection: true },
   { href: "#newsletter", label: "Newsletter", isSection: true },
-  { href: "#team", label: "Team", isSection: true },
+  { href: "/team", label: "Team", isSection: false },
   // { href: "/gallery", label: "Gallery", isSection: false },
   { href: "#contact", label: "Contact Us", isSection: true },
 ];
@@ -88,7 +88,7 @@ export function Navigation() {
     <nav ref={navRef} className="fixed w-full top-0 z-[9999] bg-[#0d5756] shadow-lg transition-transform">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex justify-between items-center h-14 sm:h-16 lg:h-18">
-          {/* Logo */}
+          {}
           <button
             onClick={() => handleLinkClick("/", false)}
             className="flex items-center space-x-2 lg:space-x-3 hover:opacity-80 transition-opacity cursor-pointer group"
@@ -102,7 +102,7 @@ export function Navigation() {
             </div>
           </button>
 
-          {/* Desktop Navigation */}
+          {}
           <div className="hidden lg:flex space-x-6 xl:space-x-8">
             {navigationLinks.map((link) => (
               <button
