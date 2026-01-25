@@ -119,10 +119,7 @@ export default function Home() {
                 <div className="content-section">
                   <EventsSection />
                 </div>
-                <div className="content-section">
-                  <TeamSection />
-                </div>
-
+          
                 <div className="content-section">
                   <NewsletterSection />
                 </div>

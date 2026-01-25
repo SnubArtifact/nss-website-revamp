@@ -12,9 +12,9 @@ export function TeamSection() {
     ].includes(member.position as any)
   );
 
-  const coordinators = teamMembers.filter((member) =>
-    member.position.includes("Coordinator")
-  );
+const coordinators = teamMembers
+  .filter((member) => member.position.includes("Coordinator"))
+  .sort((a, b) => a.position.localeCompare(b.position));
 
   const facultyIncharge = professors.filter(
     (prof) => prof.position === "Program Coordinator"
