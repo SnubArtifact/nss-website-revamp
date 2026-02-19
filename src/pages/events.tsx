@@ -37,22 +37,22 @@ export const Events = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
-  
- 
+
+
   const galleryImages: GalleryImage[] = [
     { id: 1, src: '/events/bdc1.jpg', alt: 'Blood Donation Camp', category: 'campaign' },
     { id: 2, src: '/events/cdy1.jpg', alt: 'Conferencia de Youth', category: 'workshop' },
     { id: 3, src: '/events/junoon1.jpg', alt: 'Junoon', category: 'cultural' },
-   
+
   ];
 
   //  coordinators data
   const coordinators: Coordinator[] = [
     { name: "Anuj Paliwal", position: "Events Coordinator" },
-    
+
   ];
 
-  
+
   const eventsData: EventsData = {
     name: "Events",
     description: "Planning and organizing major NSS events and festivals, managing event logistics and coordination activities.",
@@ -64,23 +64,23 @@ export const Events = () => {
       activities: [
         {
           title: "Junoon",
-          description: "Organizing annual festivals and cultural events to promote social awareness.",
+          description: "Junoon is a 2-day sports extravaganza for specially-abled children, annually organised by NSS, BITS Pilani. The event also has fun-filled recreational activities, a cultural Junoon Nite, and motivational talks by our honourable guests, among other things, to give the participants an unparalleled experience. Junoon offers a stage where specially-abled individuals can proudly display their talents to a wider audience, reinforcing the belief in equality for all. The main aim of this event however is to serve as a beacon of awareness, shedding light on the challenges faced by the remarkable children. The event fosters understanding and compassion for a more inclusive and empathetic society. We had the pleasure of welcoming around 100 children per year accompanied by their dedicated helpers. Till now, over 50+ organisations have participated in Junoon making it an excellent event.",
         },
         {
           title: "Blood Donation Camp",
-          description: "Organizing awareness campaigns and workshops on various social issues.",
+          description: "The Blood Donation Camp (BDC) organized by NSS BITS Pilani is committed to public health and humanitarian service. The camp has grown into a lifesaving initiative that reflects the unity, compassion, and civic responsibility of the BITSian community. Held annually, the Blood Donation Camp witnesses the enthusiastic footfall of over 1000+ students, faculty, and staff members, with hundreds of units of blood collected in a couple of days. Each unit has the potential to save up to three lives, directly benefiting accident victims, cancer patients, children with blood disorders like thalassemia, and individuals undergoing critical surgeries.Furthermore, the camp serves as a platform to raise awareness about the significance of regular blood donations and the positive impact it can have on enhancing healthcare outcomes for patients in need. The camp is organized in collaboration with Indian Red Cross Society (IRCS), ensuring safe collection procedures and efficient distribution of donated blood to areas where it is most needed. In the academic year 2024-25 NSS BITS Pilani conducted its 43rd edition of BDC with over 600+ Donors.",
         },
         {
           title: "Shop for Smile",
-          description: "Organizing awareness campaigns and workshops on various social issues.",
+          description: "Every year, a stall is set up by NSS, BITS Pilani during the Oasis - Cultural Festival of BITS Pilani. It is intended to promote various NGOs working tirelessly for social welfare. Various products made by rural women and people with disabilities and procured by NGOs are exhibited at the booth. Products include stationary, candles, handbags, Tshirts, laptop cases and many more handicraft items. We joined hands with over 11 NGOs including Umang from Jaipur, Tender Heart, Women Synergy. Almost all the products being sold and left products were sent back to NGOs along with the money for sold products. We are glad to revamp our initiative in which we will support the women and children to make the handicraft and sell them.",
         },
         {
           title: "Conferencia de Youth",
-          description: "Organizing awareness campaigns and workshops on various social issues.",
+          description: "CdY is a social conference organized by NSS BITS Pilani annually that provides various social organizations across the country a platform to discuss, ideate and innovate to bring positive impact in the society. It is a series of events organized during APOGEE - BITS Pilani' s own tech fest, to highlight initiatives taken by social organizations so that others can get inspired and contribute to change. These events attempt at bringing exposure to works of social service organizations and individuals who embody the gist of helping the society and growing with it.",
         },
         {
           title: "Old Notebook Collection Drive (ONCD)",
-          description: "The Old Notebook Collection Drive (ONCD) is an annual NSS initiative conducted at the end of every academic year to collect used notebooks from students across campus. These notebooks are then sent for recycling, helping reduce paper waste and promote eco-friendly practices within the BITS Pilani community.",
+          description: "The Old Notebook Collection Drive (ONCD) is an annual NSS initiative conducted at the end of every academic year to collect used notebooks from students across campus. These notebooks are then sent for recycling, helping reduce paper waste and promote eco-friendly practices within the BITS Pilani community.",
         },
       ]
     }
@@ -93,7 +93,7 @@ export const Events = () => {
     return () => clearInterval(interval);
   }, [galleryImages.length]);
 
-  
+
 
   // Toggle activity expansion
   const toggleActivity = (index: number) => {
@@ -102,7 +102,7 @@ export const Events = () => {
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
-      <SEO 
+      <SEO
         title="Events - NSS BITS Pilani"
         description="Planning and organizing major NSS events and festivals, managing event logistics and coordination activities."
       />
@@ -146,14 +146,14 @@ export const Events = () => {
               Our Activities
             </h2>
           </div>
-          
+
           <div className="space-y-6">
             {eventsData.details.activities.map((activity, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border-l-4 border-[#0D5760]"
               >
-                <div 
+                <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleActivity(index)}
                 >
@@ -179,19 +179,18 @@ export const Events = () => {
               Our Events
             </h2>
           </div>
-          
+
           {/* Carousel */}
           <div className="relative mb-12 rounded-lg overflow-hidden shadow-inner">
             <div className="aspect-[16/9]">
               {galleryImages.map((image, index) => (
-                <div 
+                <div
                   key={image.id}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentSlide ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
-                  <img 
-                    src={image.src} 
+                  <img
+                    src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover"
                     onError={(e) => {
@@ -204,23 +203,22 @@ export const Events = () => {
                   </div>
                 </div>
               ))}
-              
+
               <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
                 {galleryImages.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
+                      }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
-                ))}            
+                ))}
               </div>
             </div>
           </div>
-          
-  
+
+
         </section>
 
       </main>

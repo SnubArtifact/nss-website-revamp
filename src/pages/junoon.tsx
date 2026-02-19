@@ -173,66 +173,8 @@ export const Junoon = () => {
           </div>
         </section>
 
-        {/* Gallery Section */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-semibold text-[#5e2b2a] inline-block px-6 pb-2 border-b-2 border-[#5e2b2a]">
-              Event Moments
-            </h2>
-          </div>
 
-          {/* Carousel */}
-          {/*<div className="relative mb-12 h-80 md:h-[32rem] rounded-xl overflow-hidden shadow-inner">
-            {galleryImages.map((image, index) => (
-              <div 
-                key={image.id}
-                className={`absolute inset-0 transition-opacity duration-1000 flex items-center justify-center ${
-                  index === currentSlide ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                <img 
-                  src={image.src} 
-                  alt={image.alt}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
-                  <p className="text-xl text-white font-medium">{image.alt}</p>
-                </div>
-              </div>
-            ))}
-            
-            <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
-              {galleryImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentSlide ? 'bg-white w-8' : 'bg-white/60'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-          */}
-        </section>
 
-        {/* Contact CTA */}
-        <section className="text-center mb-20">
-          <div className="bg-[#ffc3c0] bg-opacity-20 p-10 rounded-xl border-2 border-[#ffc3c0]">
-            <h2 className="text-3xl font-semibold text-[#5e2b2a] mb-4">Experience Junoon</h2>
-            <p className="text-lg text-[#5e2b2a] mb-6 max-w-2xl mx-auto">
-              Join us for this vibrant celebration of culture and social awareness.
-            </p>
-            <button
-              onClick={handleContactUsClick}
-              className="bg-[#5e2b2a] hover:bg-[#4a2221] text-white font-bold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105"
-            >
-              Contact Us
-            </button>
-          </div>
-        </section>
       </main>
 
       {/* Elegant Footer */}
