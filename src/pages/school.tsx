@@ -37,8 +37,8 @@ export const School = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
-  
-  
+
+
   const galleryImages: GalleryImage[] = [
     { id: 1, src: '/events/school1.jpg', alt: 'Students in science lab', category: 'academic' },
     { id: 2, src: '/events/school2.jpg', alt: 'Students in NSS building', category: 'sports' },
@@ -49,13 +49,13 @@ export const School = () => {
   const coordinators: Coordinator[] = [
     { name: "Shreena Kansagra", position: "School Coordinator" },
     { name: "Sitaram Prajapat", position: "School Coordinator" },
-   
+
   ];
 
-  
+
   const schoolData: SchoolData = {
     name: " School",
-    description: "Overseeing literacy and education programs, managing school outreach and student mentorship programs.",
+    description: "NSS BITS Pilani is committed to providing free and high quality holistic education to students from grade 1 to 12. We focus on academic excellence, moral values, and social responsibility.",
     icon: "fas fa-graduation-cap",
     color: "from-blue-500 to-indigo-500",
     members: coordinators.filter((c) => c.position.includes("School") || c.position.includes("Academic")),
@@ -94,7 +94,7 @@ export const School = () => {
     }
   };
 
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
@@ -102,7 +102,7 @@ export const School = () => {
     return () => clearInterval(interval);
   }, [galleryImages.length]);
 
- 
+
   // Toggle activity expansion
   const toggleActivity = (index: number) => {
     setExpandedActivity(expandedActivity === index ? null : index);
@@ -110,13 +110,21 @@ export const School = () => {
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
-      <SEO 
-        title="School Department - NSS BITS Pilani" 
-        description="Overseeing literacy and education programs, managing school outreach and student mentorship programs." 
+      <SEO
+        title="School Department - NSS BITS Pilani"
+        description="NSS BITS Pilani is committed to providing free and high quality holistic education to students from grade 1 to 12. We focus on academic excellence, moral values, and social responsibility."
       />
       {/* Header */}
-      <header className="py-12 bg-[#0D5760]">
-        <div className="container mx-auto px-4">
+      <header className="py-16 bg-[#0D5760] relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/events/school1.jpg"
+            alt="School background"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0D5760]/80 to-[#0D5760]"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="mb-6">
             <BackButton variant="ghost" className="text-[#FFE5E3] hover:bg-[#FFE5E3] hover:text-[#0D5760]" />
           </div>
@@ -154,14 +162,14 @@ export const School = () => {
               Our Programs
             </h2>
           </div>
-          
+
           <div className="space-y-6">
             {schoolData.details.activities.map((activity, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border-l-4 border-[#0D5760]"
               >
-                <div 
+                <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleActivity(index)}
                 >
@@ -187,7 +195,7 @@ export const School = () => {
               Our Aims
             </h2>
           </div>
-          
+
           <ul className="grid md:grid-cols-2 gap-8">
             {[
               "To provide quality education that fosters academic excellence",
@@ -207,6 +215,20 @@ export const School = () => {
           </ul>
         </section>
 
+        {/* Collaborators Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-semibold text-[#0D5760] inline-block px-6 pb-2 border-b-2 border-[#0D5760]">
+              Our Collaborators
+            </h2>
+          </div>
+          <div className="bg-white p-8 rounded-lg shadow-sm border border-[#FFC3C0] text-center">
+            <p className="text-lg text-gray-700">
+              NSS School works in collaboration with local educational institutions and community partners to provide quality education and resources to our students.
+            </p>
+          </div>
+        </section>
+
         {/* Vision Section */}
         <section className="mb-20 bg-white p-10 rounded-lg border border-[#FFC3C0] shadow-sm">
           <div className="max-w-3xl mx-auto">
@@ -217,8 +239,8 @@ export const School = () => {
               <blockquote className="text-lg text-gray-700 leading-relaxed text-center italic">
                 <p className="relative">
                   <span className="absolute -left-6 -top-4 text-4xl text-[#FFC3C0]">"</span>
-                  To be a premier educational institution that shapes future leaders through innovative teaching, 
-                  character building, and community engagement, creating responsible global citizens who contribute 
+                  To be a premier educational institution that shapes future leaders through innovative teaching,
+                  character building, and community engagement, creating responsible global citizens who contribute
                   positively to society.
                   <span className="absolute -right-6 -bottom-6 text-4xl text-[#FFC3C0]">"</span>
                 </p>
@@ -237,19 +259,18 @@ export const School = () => {
               School in Pictures
             </h2>
           </div>
-          
+
           {/* Carousel */}
           <div className="relative mb-12 rounded-lg overflow-hidden shadow-inner">
             <div className="aspect-[16/9]">
               {galleryImages.map((image, index) => (
-                <div 
+                <div
                   key={image.id}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentSlide ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
-                  <img 
-                    src={image.src} 
+                  <img
+                    src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover"
                     onError={(e) => {
@@ -262,24 +283,23 @@ export const School = () => {
                   </div>
                 </div>
               ))}
-            
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-              {galleryImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
+
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                {galleryImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
+                      }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-          </section>
-          
-          
+        </section>
+
+
       </main>
     </div>
   );

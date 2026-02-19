@@ -36,7 +36,7 @@ export const SponsorshipCollaboration = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
-  
+
   const galleryImages: GalleryImage[] = [
     { id: 1, src: '/images/corporate-partnership.jpg', alt: 'Corporate partnership signing', category: 'partnership' },
     { id: 2, src: '/images/grant-management.jpg', alt: 'Grant management workshop', category: 'grants' },
@@ -51,7 +51,7 @@ export const SponsorshipCollaboration = () => {
 
   const sponsorshipData: SponsorshipData = {
     name: "Department of Sponsorship and Collaboration",
-    description: "Managing partnerships and sponsorship initiatives, building strategic partnerships and collaboration opportunities.",
+    description: "The primary aim of the Department of Sponsorship & Collaboration (DeSCo) at NSS BITS Pilani is to secure and manage financial and in-kind support essential for the smooth execution of all major NSS events.",
     icon: "fas fa-handshake",
     color: "from-indigo-500 to-purple-500",
     members: coordinators.filter((c) => c.position.includes("Sponsorship")),
@@ -79,8 +79,8 @@ Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on s
           description: "To maintain a seamless operational flow for all events by ensuring timely access to financial and logistical support.",
         },
         {
-          title: "Skill promotion",
-          description: "To promote professionalism, negotiation, and communication skills among students by actively involving them in real-world sponsorship and collaboration processes.",
+          title: "Desco Sponsor Logo",
+          description: "Our initiatives are supported by various corporate partners and sponsors. Below are the organizations that have collaborated with us to drive social impact.",
         },
       ]
     }
@@ -99,9 +99,9 @@ Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on s
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
-      <SEO 
-        title="Department of Sponsorship and Collaboration - NSS BITS Pilani" 
-        description="Managing partnerships and sponsorship initiatives, building strategic partnerships and collaboration opportunities." 
+      <SEO
+        title="Department of Sponsorship and Collaboration - NSS BITS Pilani"
+        description="The primary aim of the Department of Sponsorship & Collaboration (DeSCo) at NSS BITS Pilani is to secure and manage financial and in-kind support essential for the smooth execution of all major NSS events."
       />
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4">
@@ -142,14 +142,14 @@ Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on s
               Our Activities
             </h2>
           </div>
-          
+
           <div className="space-y-6">
             {sponsorshipData.details.activities.map((activity, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border-l-4 border-[#0D5760]"
               >
-                <div 
+                <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleActivity(index)}
                 >
@@ -175,19 +175,18 @@ Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on s
               Our Collaborations
             </h2>
           </div>
-          
+
           {/* Carousel */}
           <div className="relative mb-12 rounded-lg overflow-hidden shadow-inner">
             <div className="aspect-[16/9]">
               {galleryImages.map((image, index) => (
-                <div 
+                <div
                   key={image.id}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentSlide ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
-                  <img 
-                    src={image.src} 
+                  <img
+                    src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover"
                     onError={(e) => {
@@ -202,19 +201,18 @@ Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on s
                   </div>
                 </div>
               ))}
-            
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-              {galleryImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
+
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                {galleryImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
+                      }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>

@@ -73,11 +73,6 @@ export const teamMembers: TeamMember[] = [
     position: "Umang Coordinator",
     imageUrl: "/2023/aarushi.jpeg",
   },
-  {
-    name: "Siya Madan",
-    position: "Umang Coordinator",
-    imageUrl: "/2023/siya.jpeg",
-  },
   // Events Department
   {
     name: "Anuj Paliwal",

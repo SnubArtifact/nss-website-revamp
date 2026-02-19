@@ -37,14 +37,14 @@ export const HealthPublicAwareness = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
-  
-  
+
+
   const galleryImages: GalleryImage[] = [
     { id: 1, src: '/events/hpa1.jpg', alt: 'Health camp in progress', category: 'camp' },
     { id: 2, src: '/events/hpa2.jpg', alt: 'Clothes distribution event', category: 'donation' },
     { id: 3, src: '/events/hpa3.jpg', alt: 'Health camp', category: 'camp' },
     { id: 4, src: '/events/hpa4.jpg', alt: 'Our soldiers at work', category: 'awareness' },
-   
+
   ];
 
   // coordinators data
@@ -56,7 +56,7 @@ export const HealthPublicAwareness = () => {
   // Health and Public Awareness data
   const hpaData: HealthPublicAwarenessData = {
     name: "Health and Public Awareness",
-    description: "We manage health camps and wellness programs, lead health awareness campaigns, and conduct medical outreach to promote community well-being.",
+    description: "The Department of Health and Public Awareness aims to spread awareness about important health and social issues and help society. We work to empower those in need so that they can live a more comfortable life and make well-informed decisions.",
     icon: "fas fa-stethoscope",
     color: "from-green-500 to-teal-500",
     members: coordinators.filter((c) => c.position.includes("Health")),
@@ -95,7 +95,7 @@ export const HealthPublicAwareness = () => {
     }
   };
 
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
@@ -103,7 +103,7 @@ export const HealthPublicAwareness = () => {
     return () => clearInterval(interval);
   }, [galleryImages.length]);
 
- 
+
 
   const toggleActivity = (index: number) => {
     setExpandedActivity(expandedActivity === index ? null : index);
@@ -111,13 +111,21 @@ export const HealthPublicAwareness = () => {
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
-      <SEO 
-        title="Health and Public Awareness - NSS BITS Pilani" 
-        description="We manage health camps and wellness programs, lead health awareness campaigns, and conduct medical outreach to promote community well-being." 
+      <SEO
+        title="Health and Public Awareness - NSS BITS Pilani"
+        description="The Department of Health and Public Awareness aims to spread awareness about important health and social issues and help society. We work to empower those in need so that they can live a more comfortable life and make well-informed decisions."
       />
       {/* Header */}
-      <header className="py-12 bg-[#0D5760]">
-        <div className="container mx-auto px-4">
+      <header className="py-16 bg-[#0D5760] relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/events/hpa1.jpg"
+            alt="Health camp background"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0D5760]/80 to-[#0D5760]"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="mb-6">
             <BackButton variant="ghost" className="text-[#FFE5E3] hover:bg-[#FFE5E3] hover:text-[#0D5760]" />
           </div>
@@ -155,14 +163,14 @@ export const HealthPublicAwareness = () => {
               Our Initiatives
             </h2>
           </div>
-          
+
           <div className="space-y-6">
             {hpaData.details.activities.map((activity, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border-l-4 border-[#0D5760]"
               >
-                <div 
+                <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleActivity(index)}
                 >
@@ -188,7 +196,7 @@ export const HealthPublicAwareness = () => {
               Our Aims
             </h2>
           </div>
-          
+
           <ul className="grid md:grid-cols-2 gap-8">
             {[
               "To promote community health through regular health camps, awareness drives, and preventive care initiatives.",
@@ -206,6 +214,20 @@ export const HealthPublicAwareness = () => {
               </li>
             ))}
           </ul>
+        </section>
+
+        {/* Collaborators Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-semibold text-[#0D5760] inline-block px-6 pb-2 border-b-2 border-[#0D5760]">
+              Our Collaborators
+            </h2>
+          </div>
+          <div className="bg-white p-8 rounded-lg shadow-sm border border-[#FFC3C0] text-center">
+            <p className="text-lg text-gray-700">
+              We are proud to collaborate with the <span className="font-bold text-[#0D5760]">Indian Red Cross Society</span> and other local health organizations to bring essential medical services and health awareness to our communities.
+            </p>
+          </div>
         </section>
 
         {/* Vision Section */}
@@ -236,19 +258,18 @@ export const HealthPublicAwareness = () => {
               HPA in Action
             </h2>
           </div>
-          
+
           {/* Carousel */}
           <div className="relative mb-12 rounded-lg overflow-hidden shadow-inner">
             <div className="aspect-[16/9]">
               {galleryImages.map((image, index) => (
-                <div 
+                <div
                   key={image.id}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentSlide ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
-                  <img 
-                    src={image.src} 
+                  <img
+                    src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover"
                     onError={(e) => {
@@ -261,22 +282,21 @@ export const HealthPublicAwareness = () => {
                   </div>
                 </div>
               ))}
-            
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-              {galleryImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
+
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                {galleryImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
+                      }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-    
+
         </section>
 
       </main>

@@ -26,7 +26,7 @@ export const departments = [
     name: "Computer Literacy Programme",
     id: "computer-literacy-programme",
     description:
-      "Teaching digital skills and computer literacy to communities, developing digital education programs and training modules.",
+      "The Computer Literacy Programme (CLP) is an initiative focused on teaching digital skills and computer literacy to communities, especially underserved sections of society.",
     icon: "fas fa-laptop",
     color: "from-blue-500 to-blue-700",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
@@ -66,18 +66,18 @@ export const departments = [
     members: coordinators.filter((c) => c.position.includes("Events")),
     details: { mission: "", activities: [] },
   },
- {
-  name: "Health and Public Awareness",
-  id: "health-public-awareness",
-  description:
-    "Managing health camps and wellness programs, leading health awareness campaigns and medical outreach.",
-  icon: "fas fa-stethoscope",
-  color: "from-red-500 to-red-700",
-  image:
-    "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
-  members: coordinators.filter((c) => c.position.includes("Health")),
-  details: { mission: "", activities: [] },
-},
+  {
+    name: "Health and Public Awareness",
+    id: "health-public-awareness",
+    description:
+      "Managing health camps and wellness programs, leading health awareness campaigns and medical outreach.",
+    icon: "fas fa-stethoscope",
+    color: "from-red-500 to-red-700",
+    image:
+      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
+    members: coordinators.filter((c) => c.position.includes("Health")),
+    details: { mission: "", activities: [] },
+  },
 
   {
     name: "Parishodh",

@@ -12,9 +12,9 @@ export function TeamSection() {
     ].includes(member.position as any)
   );
 
-const coordinators = teamMembers
-  .filter((member) => member.position.includes("Coordinator"))
-  .sort((a, b) => a.position.localeCompare(b.position));
+  const coordinators = teamMembers
+    .filter((member) => member.position.includes("Coordinator"))
+    .sort((a, b) => a.position.localeCompare(b.position));
 
   const facultyIncharge = professors.filter(
     (prof) => prof.position === "Program Coordinator"
@@ -57,8 +57,18 @@ const coordinators = teamMembers
                   <div key={faculty.name} className="w-full max-w-sm">
                     <Card className="card-hover">
                       <CardContent className="p-4 sm:p-6 text-center">
-                        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                          <i className="fas fa-user-tie text-blue-700 text-lg sm:text-xl"></i>
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden mx-auto mb-3 sm:mb-4 border-2 border-blue-100">
+                          {faculty.imageUrl ? (
+                            <img
+                              src={faculty.imageUrl}
+                              alt={faculty.name}
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-blue-100 flex items-center justify-center">
+                              <i className="fas fa-user-tie text-blue-700 text-lg sm:text-xl"></i>
+                            </div>
+                          )}
                         </div>
                         <h5 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">
                           {faculty.name}
@@ -100,8 +110,18 @@ const coordinators = teamMembers
                   <div key={officer.name}>
                     <Card className="card-hover h-full">
                       <CardContent className="p-4 sm:p-6 text-center">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-community-green/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                          <i className="fas fa-chalkboard-teacher text-community-green text-base sm:text-lg"></i>
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden mx-auto mb-3 sm:mb-4 border-2 border-community-green/20">
+                          {officer.imageUrl ? (
+                            <img
+                              src={officer.imageUrl}
+                              alt={officer.name}
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-community-green/10 flex items-center justify-center">
+                              <i className="fas fa-chalkboard-teacher text-community-green text-base sm:text-lg"></i>
+                            </div>
+                          )}
                         </div>
                         <h5 className="text-sm sm:text-base font-semibold text-gray-900 mb-1">
                           {officer.name}

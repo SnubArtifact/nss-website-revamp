@@ -88,7 +88,7 @@ export function Navigation() {
     <nav ref={navRef} className="fixed w-full top-0 z-[9999] bg-[#0d5756] shadow-lg transition-transform">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex justify-between items-center h-14 sm:h-16 lg:h-18">
-          {}
+          { }
           <button
             onClick={() => handleLinkClick("/", false)}
             className="flex items-center space-x-2 lg:space-x-3 hover:opacity-80 transition-opacity cursor-pointer group"
@@ -100,9 +100,13 @@ export function Navigation() {
                 className="w-full h-full object-contain"
               />
             </div>
+            <div className="flex flex-col items-start leading-tight">
+              <span className="text-white font-bold text-lg lg:text-xl tracking-tight">NSS</span>
+              <span className="text-white font-medium text-xs lg:text-sm tracking-wide opacity-90">BITS Pilani</span>
+            </div>
           </button>
 
-          {}
+          { }
           <div className="hidden lg:flex space-x-6 xl:space-x-8">
             {navigationLinks.map((link) => (
               <button
@@ -117,7 +121,7 @@ export function Navigation() {
               className="bg-white text-[#0D5760] hover:bg-gray-100 font-bold ml-4"
               onClick={() => handleLinkClick("/sponsors", false)}
             >
-              Our Sponsors
+              Our Collaborators
             </Button>
           </div>
 
@@ -184,7 +188,7 @@ export function Navigation() {
                     className="block w-full px-4 py-3 text-left bg-[#0d5760] text-white hover:bg-[#093f3e] rounded-lg font-bold transition-colors duration-200 mt-4"
                   >
                     <i className="fas fa-heart mr-3 text-sm"></i>
-                    Our Sponsors
+                    Our Collaborators
                   </button>
                 </div>
               </SheetContent>

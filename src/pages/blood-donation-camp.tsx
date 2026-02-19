@@ -12,11 +12,11 @@ type Activity = {
 export const BloodDonationCamp = () => {
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
   const navigate = useNavigate();
-  
+
   const handleContactUsClick = () => {
     navigate('/#contact');
   };
-  
+
   const event = events.find(e => e.title === "Blood Donation Camp");
   if (!event) return <div className="text-center py-20 font-heading">Event not found</div>;
 
@@ -71,7 +71,7 @@ export const BloodDonationCamp = () => {
 
   return (
     <div className="min-h-screen font-heading bg-gradient-to-br from-red-50 to-pink-50">
-      <SEO 
+      <SEO
         title="Blood Donation Camp - NSS BITS Pilani"
         description="Annual blood donation drive to save lives and support local blood banks. Gift of Life - Donate Blood, Save Lives."
       />
@@ -102,9 +102,9 @@ export const BloodDonationCamp = () => {
           </h2>
           <div className="flex flex-col lg:flex-row gap-10 items-center">
             <div className="lg:w-1/2">
-              <img 
-                src={event.imageUrl} 
-                alt={event.title} 
+              <img
+                src={event.imageUrl}
+                alt={event.title}
                 className="w-full h-auto rounded-lg shadow-xl border-4 border-white transform hover:scale-[1.01] transition duration-300"
               />
             </div>
@@ -156,14 +156,14 @@ export const BloodDonationCamp = () => {
               Event Highlights
             </h2>
           </div>
-          
+
           <div className="space-y-6">
             {activities.map((activity, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border-l-4 border-red-500"
               >
-                <div 
+                <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleActivity(index)}
                 >
@@ -200,22 +200,6 @@ export const BloodDonationCamp = () => {
               <div className="text-4xl font-bold text-red-600 mb-2">100%</div>
               <div className="text-red-700">Safe & Sterile</div>
             </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="text-center mb-20">
-          <div className="bg-gradient-to-r from-red-100 to-pink-100 p-10 rounded-xl border-2 border-red-300">
-            <h2 className="text-3xl font-semibold text-red-800 mb-4">Be a Hero</h2>
-            <p className="text-lg text-red-700 mb-6 max-w-2xl mx-auto">
-              Be a hero in someone's story. Every donation counts!
-            </p>
-            <button 
-              onClick={handleContactUsClick}
-              className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105"
-            >
-              Contact Us
-            </button>
           </div>
         </section>
       </main>

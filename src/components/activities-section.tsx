@@ -12,7 +12,7 @@ export function ActivitiesSection() {
           </h2>
           <div className="w-24 h-1 gradient-bg mx-auto mb-6"></div>
           <p className="text-xl text-white max-w-3xl mx-auto">
-            Discover our specialized departments and their dedicated work in
+            Discover our departments and their dedicated work in
             community service across various domains.
           </p>
         </div>
@@ -28,24 +28,26 @@ export function ActivitiesSection() {
                   window.location.href = `/${dept.id}`;
                 }}
               >
-                <Card className="card-hover bg-gradient-to-br from-[#0d5752]/80 to-[#0d5752]/90 backdrop-blur-lg border border-[#0d5752]/20 rounded-xl cursor-pointer group h-full overflow-hidden">
-                  
-                  {/* Image */}
-                  <div className="relative h-40 w-full overflow-hidden">
+                <Card className="card-hover bg-gradient-to-br from-[#0d5752]/80 to-[#0d5752]/90 backdrop-blur-lg border border-[#0d5752]/20 rounded-xl cursor-pointer group h-full overflow-hidden flex flex-col">
+
+                  {/* Image with Title Overlay */}
+                  <div className="relative h-48 w-full overflow-hidden">
                     <img
                       src={dept.image}
                       alt={dept.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-black/40"></div>
+                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors"></div>
+                    <div className="absolute inset-0 flex items-center justify-center p-4">
+                      <h4 className="text-xl font-bold font-heading text-white text-center group-hover:scale-105 transition-transform duration-300">
+                        {dept.name}
+                      </h4>
+                    </div>
                   </div>
 
-                  <CardContent className="p-6 text-center">
-                    <h4 className="text-lg font-semibold font-heading text-white mb-2 group-hover:text-gray-300 transition-colors">
-                      {dept.name}
-                    </h4>
+                  <CardContent className="p-6 text-center flex-grow flex flex-col justify-center">
                     <p
-                      className="text-sm text-gray-300 line-clamp-3"
+                      className="text-sm text-gray-300 line-clamp-3 leading-relaxed"
                       style={{ whiteSpace: "pre-line" }}
                     >
                       {dept.description}

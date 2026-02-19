@@ -59,10 +59,10 @@ export const SponsorsPage = () => {
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
       <SEO
-        title="Our Sponsors - NSS BITS Pilani"
-        description="We are grateful for the support of our sponsors who make our initiatives possible."
+        title="Our Collaborators - NSS BITS Pilani"
+        description="We are grateful for the support of our collaborators and partners who make our initiatives possible."
       />
-      
+
       {/* Header Section */}
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4">
@@ -74,7 +74,7 @@ export const SponsorsPage = () => {
           </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4 text-[#FFE5E3] tracking-tight">
-              Our Sponsors
+              Our Collaborators
             </h1>
             <p className="text-2xl italic font-light text-[#FFC3C0]">
               Partners in Social Impact
@@ -92,7 +92,7 @@ export const SponsorsPage = () => {
               A Heartfelt Thank You
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              We extend our deepest gratitude to our sponsors and partners. Your
+              We extend our deepest gratitude to our collaborators and partners. Your
               generous support empowers us to drive meaningful change and execute
               impactful initiatives for the betterment of society. Together, we
               are making a difference.
@@ -103,7 +103,7 @@ export const SponsorsPage = () => {
         {/* Sponsors Grid */}
         <section>
           <h2 className="text-3xl font-bold text-[#0D5760] text-center mb-12">
-            Our Past Sponsors
+            Our Past Collaborators
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
             {sponsors.map((sponsor) => (
@@ -119,7 +119,7 @@ export const SponsorsPage = () => {
 const SponsorCard = ({ sponsor }: { sponsor: Sponsor }) => {
   const CardContent = () => (
     <div className="h-full bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-[#0D5760]/20 flex flex-col items-center justify-center gap-4 group">
-      <div 
+      <div
         className={`w-full aspect-video flex items-center justify-center p-4 rounded-lg overflow-hidden relative ${sponsor.bg || 'bg-white'}`}
       >
         <img

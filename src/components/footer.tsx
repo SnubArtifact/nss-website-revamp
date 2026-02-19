@@ -11,11 +11,12 @@ export function Footer() {
     { href: "#about", label: "About NSS" },
     { href: "#activities", label: "Our Activities" },
     { href: "#events", label: "Upcoming Events" },
-    { href: "/team", label: "Our Team" }, 
+    { href: "/team", label: "Our Team" },
     { href: "#contact", label: "Contact Us" },
   ];
 
   const socialLinks = [
+    { icon: "fab fa-facebook-f", href: "https://www.facebook.com/nssbits/" },
     { icon: "fab fa-twitter", href: "https://twitter.com/nssbits" },
     { icon: "fab fa-instagram", href: "https://www.instagram.com/nssbitspilani/" },
     { icon: "fab fa-linkedin-in", href: "https://linkedin.com/company/nss-bits-pilani" },
@@ -24,11 +25,11 @@ export function Footer() {
 
   const handleLinkClick = (href: string) => {
 
- if (href.startsWith("/")) {
-  navigate(href);
-  window.scrollTo({ top: 0, behavior: "auto" }); 
-  return;
-}
+    if (href.startsWith("/")) {
+      navigate(href);
+      window.scrollTo({ top: 0, behavior: "auto" });
+      return;
+    }
 
     if (location.pathname !== "/") {
       navigate("/" + href, { replace: true });

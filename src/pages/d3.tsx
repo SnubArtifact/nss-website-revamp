@@ -37,8 +37,8 @@ export const DesignDevelopment = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
-  
- 
+
+
   const galleryImages: GalleryImage[] = [
     { id: 1, src: '/images/web-development.jpg', alt: 'Website development work', category: 'development' },
     { id: 2, src: '/images/social-media-design.jpg', alt: 'Social media content creation', category: 'design' },
@@ -52,32 +52,39 @@ export const DesignDevelopment = () => {
   const coordinators: Coordinator[] = [
     { name: "Medhansh Sharma", position: "Department of Design and Development Coordinator" },
     { name: "Atharv Agarwal", position: "Department of Design and Development Coordinator" },
-     { name: "Dhruv Gupta", position: "Department of Design and Development Coordinator" },
+    { name: "Dhruv Gupta", position: "Department of Design and Development Coordinator" },
   ];
 
 
   const dndData: DesignDevelopmentData = {
     name: "Department of Design and Development",
-    description: "Creating visual content and design solutions for NSS initiatives, developing technical solutions and digital platforms.",
+    description: "The Department of Design and Development (D3) is the creative and technical backbone of NSS BITS Pilani. It is responsible for all visual communication and digital presence, ensuring that the organization’s mission is effectively conveyed through creative media and technology.",
     icon: "fas fa-laptop-code",
     color: "from-pink-500 to-rose-500",
     members: coordinators.filter((c) => c.position.includes("Design")),
     details: {
-      mission: "To enhance NSS's digital presence and create compelling visual content that amplifies our social impact message.",
+      mission: `1. To create high-quality visual content that represents NSS BITS Pilani’s various initiatives.
+2. To develop and maintain digital platforms that improve the accessibility and transparency of NSS activities.
+3. To support all departments with creative design and technical solutions for their specific needs.
+4. To ensure a cohesive brand identity across all offline and online platforms.`,
       activities: [
         {
-          title: "Website and mobile app development",
-          description: "Developing and maintaining the NSS website and mobile app.",
+          title: "Content Creation for NSS Social Media Platforms",
+          description: "Creating content for NSS's social media channels like posts on NSS Instagram page, posters and publicity material for NSS events and department initiatives.",
         },
         {
-          title: "Social media content creation",
-          description: "Creating content for NSS's social media channels.",
+          title: "Web Development",
+          description: "Focused on maintaining and updating the official NSS BITS Pilani website. We build digital platforms to streamline internal processes and improve community engagement.",
+        },
+        {
+          title: "Video Editing & Animation",
+          description: "Creating impactful video content for event promotions, highlights, and educational series. We use motion graphics to make our social messaging more engaging.",
         },
       ]
     }
   };
 
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
@@ -85,7 +92,7 @@ export const DesignDevelopment = () => {
     return () => clearInterval(interval);
   }, [galleryImages.length]);
 
-  
+
 
   // Toggle activity expansion
   const toggleActivity = (index: number) => {
@@ -94,9 +101,9 @@ export const DesignDevelopment = () => {
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
-      <SEO 
-        title="Department of Design and Development - NSS BITS Pilani" 
-        description="Creating visual content and design solutions for NSS initiatives, developing technical solutions and digital platforms." 
+      <SEO
+        title="Department of Design and Development - NSS BITS Pilani"
+        description="Creating visual content and design solutions for NSS initiatives, developing technical solutions and digital platforms."
       />
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4">
@@ -123,9 +130,19 @@ export const DesignDevelopment = () => {
           </h2>
           <div className="prose max-w-none text-gray-700">
             <p className="text-lg mb-6">{dndData.description}</p>
-            <div className="bg-[#FFC3C0] bg-opacity-20 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-[#0D5760] mb-3">Our Mission</h3>
-              <p className="whitespace-pre-line">{dndData.details.mission}</p>
+            <div className="bg-[#FFC3C0] bg-opacity-20 p-6 rounded-lg space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-[#0D5760] mb-2 text-center">Our Aim</h3>
+                <p className="text-center italic text-gray-700">"To empower NSS BITS Pilani with robust digital and visual identities that enhance its reach and impact."</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#0D5760] mb-2 text-center">Our Vision</h3>
+                <p className="text-center italic text-gray-700">"To innovate at the intersection of design and development, setting high standards for social sector branding and digital infrastructure."</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#0D5760] mb-3 text-center">Our Mission</h3>
+                <p className="whitespace-pre-line text-center">{dndData.details.mission}</p>
+              </div>
             </div>
           </div>
         </section>
@@ -137,14 +154,14 @@ export const DesignDevelopment = () => {
               Our Activities
             </h2>
           </div>
-          
+
           <div className="space-y-6">
             {dndData.details.activities.map((activity, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border-l-4 border-[#0D5760]"
               >
-                <div 
+                <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleActivity(index)}
                 >
@@ -170,19 +187,18 @@ export const DesignDevelopment = () => {
               Our Work
             </h2>
           </div>
-          
+
           {/* Carousel */}
           <div className="relative mb-12 rounded-lg overflow-hidden shadow-inner">
             <div className="aspect-[16/9]">
               {galleryImages.map((image, index) => (
-                <div 
+                <div
                   key={image.id}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentSlide ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
-                  <img 
-                    src={image.src} 
+                  <img
+                    src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover"
                     onError={(e) => {
@@ -195,23 +211,22 @@ export const DesignDevelopment = () => {
                   </div>
                 </div>
               ))}
-            
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-              {galleryImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
+
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                {galleryImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
+                      }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-          
-          
+
+
         </section>
 
       </main>

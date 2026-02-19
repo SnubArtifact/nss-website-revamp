@@ -12,11 +12,11 @@ type Activity = {
 export const ConferenciaDeYouth = () => {
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
   const navigate = useNavigate();
-  
+
   const handleContactUsClick = () => {
     navigate('/#contact');
   };
-  
+
   const event = events.find(e => e.title === "Conferencia de Youth");
   if (!event) return <div className="text-center py-20 font-heading">Event not found</div>;
 
@@ -77,7 +77,7 @@ export const ConferenciaDeYouth = () => {
 
   return (
     <div className="min-h-screen font-heading bg-gradient-to-br from-blue-50 to-indigo-50">
-      <SEO 
+      <SEO
         title="Conferencia De Youth - NSS BITS Pilani"
         description="A youth conference fostering dialogue, leadership, and diverse perspectives among students. Empowering Tomorrow's Leaders."
       />
@@ -108,9 +108,9 @@ export const ConferenciaDeYouth = () => {
           </h2>
           <div className="flex flex-col lg:flex-row gap-10 items-center">
             <div className="lg:w-1/2">
-              <img 
-                src={event.imageUrl} 
-                alt={event.title} 
+              <img
+                src={event.imageUrl}
+                alt={event.title}
                 className="w-full h-auto rounded-lg shadow-xl border-4 border-white transform hover:scale-[1.01] transition duration-300"
               />
             </div>
@@ -165,14 +165,14 @@ export const ConferenciaDeYouth = () => {
               Conference Highlights
             </h2>
           </div>
-          
+
           <div className="space-y-6">
             {activities.map((activity, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border-l-4 border-blue-500"
               >
-                <div 
+                <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleActivity(index)}
                 >
@@ -225,22 +225,6 @@ export const ConferenciaDeYouth = () => {
                 <p className="text-blue-700">Action plan for personal social impact project</p>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="text-center mb-20">
-          <div className="bg-gradient-to-r from-blue-100 to-indigo-100 p-10 rounded-xl border-2 border-blue-300">
-            <h2 className="text-3xl font-semibold text-blue-800 mb-4">Join the Movement</h2>
-            <p className="text-lg text-blue-700 mb-6 max-w-2xl mx-auto">
-              Be part of the next generation of social change leaders.
-            </p>
-            <button 
-              onClick={handleContactUsClick}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105"
-            >
-              Contact Us
-            </button>
           </div>
         </section>
       </main>

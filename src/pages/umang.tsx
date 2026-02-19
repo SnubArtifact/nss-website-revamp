@@ -37,14 +37,14 @@ export const Umang = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
-  
-  
+
+
   const galleryImages: GalleryImage[] = [
     { id: 1, src: '/events/umang1.jpg', alt: 'Umang Scholarship distribution', category: 'scholarship' },
     { id: 2, src: '/events/umang2.jpg', alt: 'Project Pragya stationery distribution', category: 'fundraising' },
     { id: 3, src: '/events/umang3.jpg', alt: 'Career counselling', category: 'community' },
     { id: 4, src: '/events/umang4.jpg', alt: 'Home visit', category: 'education' },
-   
+
   ];
 
   //  coordinators data
@@ -53,10 +53,10 @@ export const Umang = () => {
     { name: "Shivansh Saxena", position: "Umang Coordinator" },
   ];
 
- 
+
   const umangData: UmangData = {
     name: "Umang",
-    description: "Organizing support programmes for those in need.",
+    description: "Umang is a dedicated department of NSS BITS Pilani that focuses on providing essential services and support to those in need. We focus on enhancing the lives of the underprivileged and promoting social welfare.",
     icon: "fas fa-hands-helping",
     color: "from-orange-500 to-red-500",
     members: coordinators.filter((c) => c.position.includes("Umang")),
@@ -80,10 +80,6 @@ export const Umang = () => {
           description: `As part of our career counselling initiative, we provide students with information about various academic streams, career opportunities, and future prospects available to them. Our goal is to help them make informed decisions about their educational and professional paths. To achieve this, we conduct interactive sessions in their schools, where we guide them through different options they can pursue based on their interests and strengths.`,
         },
         {
-          title: "Motivational Sessions",
-          description: `We conduct motivational sessions with the aim of uplifting and encouraging the students we support. These sessions are designed to boost their morale, build self-confidence, and inspire them to stay focused on their academic and personal goals. By sharing real-life success stories and fostering a positive mindset, we strive to create an environment where students feel supported and motivated to overcome challenges and realize their full potential.`,
-        },
-        {
           title: "Student Mentorship Programme",
           description: `In the Student Mentorship Programme (SMP), we offer continuous support to students in both their personal and academic lives. The mentor helps the mentee navigate academic challenges, manage time effectively, while also being a source of emotional support. Each student is paired with a dedicated mentor who serves not only as a guide but also as a friend they can rely on`,
         },
@@ -91,7 +87,7 @@ export const Umang = () => {
     }
   };
 
- 
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
@@ -99,18 +95,18 @@ export const Umang = () => {
     return () => clearInterval(interval);
   }, [galleryImages.length]);
 
-  
 
-  
+
+
   const toggleActivity = (index: number) => {
     setExpandedActivity(expandedActivity === index ? null : index);
   };
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
-      <SEO 
-        title="Umang - NSS BITS Pilani" 
-        description="Organizing support programmes for those in need, fostering a supportive learning environment." 
+      <SEO
+        title="Umang - NSS BITS Pilani"
+        description="Umang is a dedicated department of NSS BITS Pilani that focuses on providing essential services and support to those in need. We focus on enhancing the lives of the underprivileged and promoting social welfare."
       />
       {/* Header */}
       <header className="py-12 bg-[#0D5760]">
@@ -152,14 +148,14 @@ export const Umang = () => {
               Our Initiatives
             </h2>
           </div>
-          
+
           <div className="space-y-6">
             {umangData.details.activities.map((activity, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border-l-4 border-[#0D5760]"
               >
-                <div 
+                <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleActivity(index)}
                 >
@@ -185,19 +181,18 @@ export const Umang = () => {
               Umang in Action
             </h2>
           </div>
-          
+
           {/* Carousel */}
           <div className="relative mb-12 rounded-lg overflow-hidden shadow-inner">
             <div className="aspect-[16/9]">
               {galleryImages.map((image, index) => (
-                <div 
+                <div
                   key={image.id}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentSlide ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
-                  <img 
-                    src={image.src} 
+                  <img
+                    src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover"
                     onError={(e) => {
@@ -210,23 +205,22 @@ export const Umang = () => {
                   </div>
                 </div>
               ))}
-            
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-              {galleryImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
+
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                {galleryImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
+                      }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-          
-       
+
+
         </section>
 
       </main>

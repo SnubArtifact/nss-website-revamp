@@ -20,16 +20,17 @@ export const Junoon = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
   const navigate = useNavigate();
-  
+
   const handleContactUsClick = () => {
     navigate('/#contact');
   };
-  
   const event = events.find(e => e.title === "Junoon");
   if (!event) return <div className="text-center py-20 font-heading">Event not found</div>;
 
   // Parse markdown content to extract activities
   const parseActivities = (content: string): Activity[] => {
+    // Filter out unwanted sections
+    const unwantedSections = ["Registration", "Community Impact"];
     const activitySections = content.match(/## (.+?)\n([\s\S]+?)(?=## |$)/g) || [];
     return activitySections.map(section => {
       const titleMatch = section.match(/## (.+?)\n/);
@@ -38,10 +39,16 @@ export const Junoon = () => {
         title: titleMatch ? titleMatch[1] : "Activity",
         description: descriptionMatch ? descriptionMatch[1].trim() : ""
       };
-    }).filter(act => act.title !== "Registration");
+    }).filter(act => !unwantedSections.includes(act.title));
   };
 
   const activities = parseActivities(event.content);
+
+  const chiefGuests = [
+    { name: "Deepa Malik", achievement: "First Indian woman to win a medal in Paralympic Games" },
+    { name: "Devendra Jhajharia", achievement: "First Indian Paralympian to win two gold medals at the Paralympics" },
+    { name: "Ajay Kumar Reddy", achievement: "Captain of the India national blind cricket team" }
+  ];
 
   // Gallery images for Junoon
   const galleryImages: GalleryImage[] = [
@@ -64,7 +71,7 @@ export const Junoon = () => {
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
-      <SEO 
+      <SEO
         title="Junoon - NSS BITS Pilani"
         description="Sports Extravaganza for Specially-Abled Children. A celebration of inclusion, courage, and determination."
       />
@@ -95,9 +102,9 @@ export const Junoon = () => {
           </h2>
           <div className="flex flex-col lg:flex-row gap-10 items-center">
             <div className="lg:w-1/2">
-              <img 
-                src={event.imageUrl} 
-                alt={event.title} 
+              <img
+                src={event.imageUrl}
+                alt={event.title}
                 className="w-full h-auto rounded-lg shadow-xl border-4 border-white transform hover:scale-[1.01] transition duration-300"
               />
             </div>
@@ -113,6 +120,26 @@ export const Junoon = () => {
           </div>
         </section>
 
+        {/* Chief Guests Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-semibold text-[#5e2b2a] inline-block px-6 pb-2 border-b-2 border-[#5e2b2a]">
+              Our Distinguished Chief Guests
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {chiefGuests.map((guest, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-[#ffc3c0]/30 text-center hover:shadow-md transition-shadow">
+                <div className="w-16 h-16 bg-[#ffc3c0]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="fas fa-star text-[#5e2b2a] text-2xl"></i>
+                </div>
+                <h3 className="text-xl font-bold text-[#5e2b2a] mb-2">{guest.name}</h3>
+                <p className="text-sm text-[#7a3f3e] italic">{guest.achievement}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Festival Highlights */}
         <section className="mb-20">
           <div className="text-center mb-12">
@@ -120,14 +147,14 @@ export const Junoon = () => {
               Event Highlights
             </h2>
           </div>
-          
+
           <div className="space-y-6">
             {activities.map((activity, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border-l-4 border-[#ffc3c0]"
               >
-                <div 
+                <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleActivity(index)}
                 >
@@ -153,7 +180,7 @@ export const Junoon = () => {
               Event Moments
             </h2>
           </div>
-          
+
           {/* Carousel */}
           {/*<div className="relative mb-12 h-80 md:h-[32rem] rounded-xl overflow-hidden shadow-inner">
             {galleryImages.map((image, index) => (
@@ -198,7 +225,7 @@ export const Junoon = () => {
             <p className="text-lg text-[#5e2b2a] mb-6 max-w-2xl mx-auto">
               Join us for this vibrant celebration of culture and social awareness.
             </p>
-            <button 
+            <button
               onClick={handleContactUsClick}
               className="bg-[#5e2b2a] hover:bg-[#4a2221] text-white font-bold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105"
             >

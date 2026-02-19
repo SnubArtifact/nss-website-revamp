@@ -27,6 +27,8 @@ type CLPData = {
   color: string;
   members: Coordinator[];
   details: {
+    aim: string;
+    vision: string;
     mission: string;
     activities: Activity[];
   };
@@ -41,26 +43,26 @@ export const ComputerLiteracyProgramme = () => {
     {
       id: 1,
       src: "/events/clp1.jpg",
-      alt: "Computer literacy class in session",
-      category: "training",
+      alt: "Seminar at School",
+      category: "seminar",
     },
     {
       id: 2,
       src: "/events/clp2.jpg",
-      alt: "Teaching digital literacy to children",
+      alt: "Govt School Initiative at PARC Building",
       category: "training",
     },
     {
       id: 3,
       src: "/events/clp3.jpg",
-      alt: "Children learning computer skills",
-      category: "training",
+      alt: "Coding classes in school",
+      category: "coding",
     },
     {
       id: 4,
       src: "/events/clp4.jpg",
-      alt: "Community computer training session",
-      category: "training",
+      alt: "Umeed",
+      category: "events",
     },
   ];
 
@@ -69,54 +71,55 @@ export const ComputerLiteracyProgramme = () => {
       name: "Aayush Katakwar",
       position: "Computer Literacy Programme Coordinator",
     },
-    { name: "Mansi Mittal", position: "Computer Literacy Programme Manager" },
+    { name: "Arin Samant", position: "Computer Literacy Programme Coordinator" },
   ];
 
   const clpData: CLPData = {
     name: "Computer Literacy Programme",
     description:
-      "Teaching digital skills and computer literacy to communities, developing digital education programs and training modules.",
+      "The Computer Literacy Programme (CLP) is an initiative focused on teaching digital skills and computer literacy to communities, especially underserved sections of society.",
     icon: "fas fa-laptop",
     color: "from-cyan-500 to-blue-500",
     members: coordinators.filter((c) => c.position.includes("Computer")),
     details: {
-      mission:
-        "To bridge the digital divide by providing computer education and digital literacy to underserved communities.",
+      aim: "To bridge the digital divide by providing accessible computer education and digital literacy to underserved communities, ensuring equal opportunities in the digital age.",
+      vision: "To create a digitally empowered community where every child in nearby areas is aware of, confident with, and capable of using modern technology in this fast-changing world.",
+      mission: "To introduce foundational computer literacy and practical digital skills to students of all age groups.",
       activities: [
         {
           title: "Government School (GS)",
           description:
-            "Students of classes 6-8th from nearby schools: Vashishth Pathak Public School, Vijay Public School, Holy Child School, CEERI Vidya, Birla School, etc came to PARC building every Monday to Saturday and they were taught basic computer applications such as Excel, Word, PowerPoint and Networking. On an average, 15-20 students regularly attended every slot, with the highest attendance being around 30. Overall, the children had a positive feedback and wish to learn from an updated syllabus in the coming semester.",
+            "Students from KG to Class 12 from nearby areas regularly attend sessions at the PARC (Pilani Atmanirbhar Resource Center) building. The initiative aims to bridge the digital divide by equipping students with essential and emerging technological skills. Participants are trained in fundamental computer applications such as Microsoft Excel, Word, PowerPoint, and basic Networking, along with exposure to trending digital skills including Artificial Intelligence tools, basic development concepts, and practical digital literacy applications. On average, 20–25 students attend daily, showing consistent participation and enthusiasm. The feedback from students has been overwhelmingly positive, with many expressing keen interest in learning through an updated and more advanced syllabus in the upcoming semester.",
         },
         {
           title: "Umeed",
           description:
-            "Umeed is an inspiring series of Olympiads crafted for the children of Pilani in classes 8-10th. It was conducted on 16th November in collaboration with the NSS School Department. This semester, we covered 7 schools namely: Vashishth Pathak Public School, Vijay Public School, Holy Child School, Kids Garden, Hemant Public School and Hanumantpura Gov. School. This semester showed increased participation from the beneficiaries.",
+            "Umeed is an inspiring collaborative initiative between NSS School and the CLP (Computer Literacy Program) department, aimed at promoting academic curiosity and excellence among school students in Pilani. This Olympiad features questions from Mathematics, Science, English, and Computer, and is open to students from classes 6 to 10, with the exact class range varying based on the structure and focus set by the organizing team for each edition. Students from several schools across Pilani participate in Umeed, including Hanumantpura, Hemant, Rakesh, NSS School, Parc Centre, and others. The event not only recognizes top performers with awards, but also celebrates every participant with certificates of appreciation, encouraging a love for learning and healthy competition, as well as helping students strengthen their preparation for future competitive exams.",
         },
         {
           title: "Coding Classes",
           description:
-            "This initiative is a multi-week learning program in which basics of web development through HTML and CSS is covered. Our volunteers regularly visited Vashishth Pathak School this semester for the classes and students participated with enthusiasm and interest.",
+            "The Coding Classes Initiative is a structured multi-week program that introduces students to the fundamentals of web development using HTML and CSS. Students learn how to structure and design basic web pages, covering concepts such as headings, links, images, forms, and styling elements like colors and layouts. Our volunteers regularly visit partner schools to conduct sessions that combine theoretical concepts with hands-on practical coding experience. Students actively write and test their own code, gradually building simple web pages by the end of the course.",
         },
         {
           title: "Seminars",
           description:
-            "This semester our volunteers conducted a seminar on the topic: 'Introduction to AR VR' on 21st October in CEERI Vidya Mandir. It was successfully conducted for over 120+ students",
+            "Seminars are conducted twice every semester across different schools, with each session reaching 100+ students. These interactive sessions focus on the latest trends in the digital domain, including Cybersecurity, Artificial Intelligence (AI) tools, AR/VR technologies, and emerging tech innovations. The seminars aim to create awareness about the rapidly evolving technological landscape, encourage responsible digital usage, and inspire students to explore future opportunities in technology-driven fields.",
         },
         {
-          title: "School Collab",
+          title: "NSS School x CLP",
           description:
-            "This semester, topics like Factorials, Fibonacci Series, Logical Reasoning were covered for students of classes 6-8th which form the fundamentals of Computers",
+            "Under the collaboration of NSS School × CLP, weekly sessions are conducted for students of Classes 6–8, focusing on foundational computational concepts. Topics such as Factorials, Fibonacci Series, and Logical Reasoning are covered, which form the fundamental building blocks of computer science and problem-solving. These sessions are held once every week and are designed to strengthen students’ analytical thinking and mathematical foundations. As part of NSS School’s education initiatives across various subjects, this program specifically aims to build early interest and confidence in computational thinking and technology.",
         },
         {
-          title: "Course in Computer Concepts (CCC)",
+          title: "Course on Computer Concepts (CCC)",
           description:
-            "Pitching for a new batch of CCC took place throughout this semester, which is a crucial first step in making this initiative successful. We approached nearby schools and asked if anyone in their staff is interested to enroll in CCC. We have found 4-5 people who are willing to give the exam, and we would begin with their classes next semester.",
+            "The Course on Computer Concepts (CCC) is a government-recognized certification examination conducted twice a year. It is open to individuals from various age groups, primarily 18 years and above, and serves as a valuable qualification for securing entry-level jobs that require basic computer proficiency. Successfully clearing this examination enhances employment opportunities and enables individuals to earn a stable income to support themselves and their families. At the PARC (Pilani Atmanirbhar Resource Center) Building, we provide daily training sessions to prepare candidates for the CCC examination. The preparation includes fundamental computer operations, digital literacy, internet usage, office applications, and exam-oriented practice, ensuring students are well-equipped and confident to successfully clear the certification.",
         },
         {
-          title: "Adult initiative",
+          title: "Adult Initiative",
           description:
-            "This initiative was conducted in collaboration with HPA with the target of imparting useful technical skills to older women, empowering them to be self-dependent. We taught them to type using text to speech and browse applications like YouTube, opening up new possibilities for digital literacy among an often overlooked demographic.",
+            "The Adult Initiative, conducted in collaboration with CLP, focuses on imparting both technical and non-technical skills to older women, enabling them to become more self-reliant. Volunteers visit areas such as Poorvi Marg-1 to teach practical skills, including writing names, creating signatures, and writing in cursive—skills that not only assist in daily life but also empower the women to guide their children. Additionally, participants learn to use text-to-speech tools for typing and to browse educational resources on platforms like YouTube. This initiative strengthens community engagement while fostering confidence and independence among the women.",
         },
       ],
     },
@@ -135,9 +138,9 @@ export const ComputerLiteracyProgramme = () => {
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
-      <SEO 
+      <SEO
         title="Computer Literacy Programme - NSS BITS Pilani"
-        description="Teaching digital skills and computer literacy to communities, developing digital education programs and training modules."
+        description="The Computer Literacy Programme (CLP) is an initiative focused on teaching digital skills and computer literacy to communities, especially underserved sections of society."
       />
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4">
@@ -167,11 +170,29 @@ export const ComputerLiteracyProgramme = () => {
           </h2>
           <div className="prose max-w-none text-gray-700">
             <p className="text-lg mb-6">{clpData.description}</p>
-            <div className="bg-[#FFC3C0] bg-opacity-20 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-[#0D5760] mb-3">
-                Our Mission
-              </h3>
-              <p className="whitespace-pre-line">{clpData.details.mission}</p>
+            <div className="bg-[#FFC3C0] bg-opacity-20 p-6 rounded-lg space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-[#0D5760] mb-2 text-center">
+                  Our Aim
+                </h3>
+                <p className="text-center italic text-gray-700">
+                  "{clpData.details.aim}"
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#0D5760] mb-2 text-center">
+                  Our Vision
+                </h3>
+                <p className="text-center italic text-gray-700">
+                  "{clpData.details.vision}"
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#0D5760] mb-3 text-center">Our Mission</h3>
+                <p className="whitespace-pre-line text-center">
+                  {clpData.details.mission}
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -225,9 +246,8 @@ export const ComputerLiteracyProgramme = () => {
               {galleryImages.map((image, index) => (
                 <div
                   key={image.id}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentSlide ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+                    }`}
                 >
                   <img
                     src={image.src}
@@ -252,9 +272,8 @@ export const ComputerLiteracyProgramme = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      index === currentSlide ? "bg-white w-4" : "bg-white/50"
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? "bg-white w-4" : "bg-white/50"
+                      }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}

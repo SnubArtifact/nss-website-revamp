@@ -12,11 +12,11 @@ type Activity = {
 export const ShopForSmile = () => {
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
   const navigate = useNavigate();
-  
+
   const handleContactUsClick = () => {
     navigate('/#contact');
   };
-  
+
   const event = events.find(e => e.title === "Shop for Smile");
   if (!event) return <div className="text-center py-20 font-heading">Event not found</div>;
 
@@ -71,7 +71,7 @@ export const ShopForSmile = () => {
 
   return (
     <div className="min-h-screen font-heading bg-gradient-to-br from-green-50 to-blue-50">
-      <SEO 
+      <SEO
         title="Shop For Smile - NSS BITS Pilani"
         description="A charity drive where proceeds from sales go directly to supporting the underprivileged. Making Commerce Meaningful."
       />
@@ -102,9 +102,9 @@ export const ShopForSmile = () => {
           </h2>
           <div className="flex flex-col lg:flex-row gap-10 items-center">
             <div className="lg:w-1/2">
-              <img 
-                src={event.imageUrl} 
-                alt={event.title} 
+              <img
+                src={event.imageUrl}
+                alt={event.title}
                 className="w-full h-auto rounded-lg shadow-xl border-4 border-white transform hover:scale-[1.01] transition duration-300"
               />
             </div>
@@ -114,7 +114,6 @@ export const ShopForSmile = () => {
                 <div className="bg-green-100 bg-opacity-50 p-6 rounded-lg border-l-4 border-green-500">
                   <h3 className="text-xl font-semibold text-green-800 mb-3">Event Details</h3>
                   <p className="mb-2"><span className="font-medium">Location:</span> {event.location}</p>
-                  <p className="mb-2"><span className="font-medium">Date:</span> {event.date.toLocaleDateString()}</p>
                 </div>
               </div>
             </div>
@@ -128,14 +127,14 @@ export const ShopForSmile = () => {
               Initiative Highlights
             </h2>
           </div>
-          
+
           <div className="space-y-6">
             {activities.map((activity, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border-l-4 border-green-500"
               >
-                <div 
+                <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleActivity(index)}
                 >
@@ -151,22 +150,6 @@ export const ShopForSmile = () => {
                 )}
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="text-center mb-20">
-          <div className="bg-gradient-to-r from-green-100 to-blue-100 p-10 rounded-xl border-2 border-green-300">
-            <h2 className="text-3xl font-semibold text-green-800 mb-4">Join Our Mission</h2>
-            <p className="text-lg text-green-700 mb-6 max-w-2xl mx-auto">
-              Every purchase creates positive social impact. Visit our stalls during Oasis!
-            </p>
-            <button 
-              onClick={handleContactUsClick}
-              className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105"
-            >
-              Contact Us
-            </button>
           </div>
         </section>
       </main>

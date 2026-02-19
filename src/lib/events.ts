@@ -2,7 +2,7 @@ export const events = [
   {
     title: "Junoon",
     description:
-      "Junoon is a 2-day sports extravaganza for specially-abled children, annually organised by NSS, BITS Pilani.",
+      "Junoon is a 2-day sports extravaganza for specially-abled children, annually organized by NSS BITS Pilani. It features sports competitions, recreational activities, and cultural performances, fostering inclusion and empathy.",
     content: `# Junoon - Sports Extravaganza for Specially-Abled Children
 
 ## Event Overview
@@ -33,7 +33,7 @@ The event fosters understanding and compassion for a more inclusive and empathet
   {
     title: "Shop for Smile",
     description:
-      "A stall set up during Oasis festival to promote NGOs working for social welfare and showcase products made by rural women and people with disabilities.",
+      "Shop for a Smile is a fundraising initiative held during Oasis, the cultural fest of BITS Pilani. It features stalls selling products handcrafted by rural women and NGOs, promoting sustainable livelihoods.",
     content: `# Shop for a Smile - Supporting Social Welfare
 
 ## Initiative Overview
@@ -75,7 +75,7 @@ During Oasis festival at BITS Pilani - experience meaningful shopping that creat
   {
     title: "Blood Donation Camp",
     description:
-      "The Blood Donation Camp (BDC) organized by NSS BITS Pilani is committed to public health and humanitarian service.",
+      "The Blood Donation Camp organized by NSS BITS Pilani is one of the largest student-led blood donation drives in India. In collaboration with the Indian Red Cross Society, it promotes humanitarian service and saves lives.",
     content: `# Blood Donation Camp (BDC) - Lifesaving Initiative
 
 ## Event Overview
@@ -123,7 +123,7 @@ Be part of this noble cause and help save lives through blood donation!`,
   {
     title: "Conferencia de Youth",
     description:
-      "CdY is a social conference organized by NSS BITS Pilani annually that provides various social organizations across the country a platform to discuss, ideate and innovate.",
+      "Conferencia-de-Youth (CdY) is a social conference held during APOGEE, the technical fest of BITS Pilani. It provides a platform for NGOs and social organizations to share ideas, innovate, and inspire social change.",
     content: `# Conferencia-de-Youth (CdY) - Platform for Social Innovation
 
 ## Conference Overview
@@ -169,5 +169,26 @@ Be part of this inspiring conference during APOGEE and contribute to positive so
     location: "Auditorium Complex",
     imageUrl: "/events/cdy.jpeg",
     category: "conference",
+  },
+  {
+    title: "Old Notebook Collection Drive (ONCD)",
+    description: "The Old Notebook Collection Drive (ONCD) is a sustainability initiative conducted at the end of each academic year. It involves collecting used notebooks from students and recycling them to reduce waste and support literacy.",
+    content: `# Old Notebook Collection Drive (ONCD) - Sustainability & Literacy
+    
+## Initiative Overview
+The Old Notebook Collection Drive (ONCD) is an annual NSS initiative conducted at the end of every academic year to collect used notebooks from students across campus. These notebooks are then sent for recycling, helping reduce paper waste and promote eco-friendly practices within the BITS Pilani community.
+
+## Our Mission
+To reduce environmental impact by recycling paper and to support education by providing recycled notebooks to those in need.
+
+## Process
+1. **Collection**: Volunteers set up collection points across hostels at the end of the semester.
+2. **Sorting**: Collected notebooks are sorted based on their condition.
+3. **Recycling**: Used pages are sent to recycling units to create new paper.
+4. **Distribution**: High-quality notebooks or recycled ones are distributed to underprivileged students.`,
+    date: new Date("2024-05-20"),
+    location: "BITS Pilani Hostels",
+    imageUrl: "/events/oncd.jpeg",
+    category: "environment",
   },
 ];

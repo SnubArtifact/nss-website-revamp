@@ -20,7 +20,7 @@ export const ACTIVITIES = [
   {
     title: "School",
     description:
-      "Teaching and mentoring underprivileged children in local schools and communities.",
+      "NSS BITS Pilani is committed to providing free and high quality holistic education to students from grade 1 to 12. We focus on academic excellence, moral values, and social responsibility.",
     image:
       "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     icon: "fas fa-book",
@@ -30,7 +30,7 @@ export const ACTIVITIES = [
   {
     title: "Health and Public Awareness",
     description:
-      "Organizing medical checkups, health awareness, and wellness programs.",
+      "The Department of Health and Public Awareness aims to spread awareness about important health and social issues and help society. We work to empower those in need so that they can live a more comfortable life and make well-informed decisions.",
     image:
       "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     icon: "fas fa-stethoscope",
@@ -39,7 +39,8 @@ export const ACTIVITIES = [
   },
   {
     title: "Parishodh",
-    description: "Environmental cleanup drives and tree plantation campaigns.",
+    description:
+      "Parishodh focuses on fostering a sense of social and environmental responsibility among students. We aim to contribute to the upliftment of the environment and the society as a whole through various initiatives.",
     image:
       "https://images.unsplash.com/photo-1618477371303-b2a56f422d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     icon: "fas fa-seedling",
@@ -49,7 +50,7 @@ export const ACTIVITIES = [
   {
     title: "Department of Sponsorship and Collaboration",
     description:
-      "Disaster relief and emergency support for affected communities.",
+      "The primary aim of the Department of Sponsorship & Collaboration (DeSCo) at NSS BITS Pilani is to secure and manage financial and in-kind support essential for the smooth execution of all major NSS events.",
     image:
       "https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     icon: "fas fa-hand-holding-heart",
@@ -59,7 +60,7 @@ export const ACTIVITIES = [
   {
     title: "Computer Literacy Programme",
     description:
-      "Teaching basic computer skills and digital awareness to communities.",
+      "The Computer Literacy Programme (CLP) is an initiative focused on teaching digital skills and computer literacy to communities, especially underserved sections of society.",
     image:
       "https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     icon: "fas fa-laptop",
@@ -69,7 +70,7 @@ export const ACTIVITIES = [
   {
     title: "Umang",
     description:
-      "Collecting and distributing clothes, books, and essential supplies.",
+      "Umang is a dedicated department of NSS BITS Pilani that focuses on providing essential services and support to those in need. We focus on enhancing the lives of the underprivileged and promoting social welfare.",
     image:
       "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     icon: "fas fa-gift",
@@ -79,7 +80,7 @@ export const ACTIVITIES = [
   {
     title: "Department of Design and Development",
     description:
-      "Creating visual content, designs, and technical solutions for NSS initiatives.",
+      "The Department of Design and Development (D3) is the creative and technical backbone of NSS BITS Pilani. It is responsible for all visual communication and digital presence.",
     image:
       "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     icon: "fas fa-palette",
@@ -115,19 +116,19 @@ export const OBJECTIVES = [
   {
     title: "Education & Awareness",
     description:
-      "Promoting literacy, education, and awareness programs in rural and urban communities.",
+      "NSS BITS Pilani is dedicated to promoting literacy and social awareness through various educational programs and outreach initiatives. We focus on empowering underprivileged communities with knowledge and skills for a better future.",
     icon: "fas fa-graduation-cap",
   },
   {
     title: "Health & Hygiene",
     description:
-      "Conducting health camps, hygiene awareness, and medical assistance programs.",
+      "NSS BITS Pilani provides free medical assistance through medical camps and spreads awareness about numerous health and sanitation issues in various villages across Pilani.",
     icon: "fas fa-heart",
   },
   {
     title: "Environment",
     description:
-      "Environmental conservation, tree plantation, and sustainable development initiatives.",
+      "NSS BITS Pilani is committed to environmental sustainability and conservation. We focus on promoting awareness about the environment and take various initiatives towards the same. Our goal is to promote a greener and cleaner Pilani.",
     icon: "fas fa-leaf",
   },
 ];

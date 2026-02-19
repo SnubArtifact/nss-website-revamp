@@ -37,7 +37,7 @@ export const Parisodh = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
-  
+
   // Sample gallery data
   const galleryImages: GalleryImage[] = [
     { id: 1, src: '/events/parisodh1.jpg', alt: 'Tree plantation drive', category: 'plantation' },
@@ -51,10 +51,10 @@ export const Parisodh = () => {
     { name: "Siddharth Bhamidipati", position: "Parishodh Coordinator" },
   ];
 
-  
+
   const parisodhData: ParisodhData = {
     name: "Parisodh",
-    description: "Leading environmental cleanup drives and sustainability projects, coordinating waste management and green initiatives.",
+    description: "Parishodh focuses on fostering a sense of social and environmental responsibility among students. We aim to contribute to the upliftment of the environment and the society as a whole through various initiatives.",
     icon: "fas fa-seedling",
     color: "from-green-600 to-lime-500",
     members: coordinators.filter((c) => c.position.includes("Parishodh")),
@@ -73,7 +73,7 @@ export const Parisodh = () => {
     }
   };
 
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
@@ -81,17 +81,17 @@ export const Parisodh = () => {
     return () => clearInterval(interval);
   }, [galleryImages.length]);
 
-  
-  
+
+
   const toggleActivity = (index: number) => {
     setExpandedActivity(expandedActivity === index ? null : index);
   };
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
-      <SEO 
-        title="Parisodh - NSS BITS Pilani" 
-        description="Leading environmental cleanup drives and sustainability projects, coordinating waste management and green initiatives." 
+      <SEO
+        title="Parisodh - NSS BITS Pilani"
+        description="Parishodh focuses on fostering a sense of social and environmental responsibility among students. We aim to contribute to the upliftment of the environment and the society as a whole through various initiatives."
       />
       {/* Header */}
       <header className="py-12 bg-[#0D5760]">
@@ -133,14 +133,14 @@ export const Parisodh = () => {
               Our Initiatives
             </h2>
           </div>
-          
+
           <div className="space-y-6">
             {parisodhData.details.activities.map((activity, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border-l-4 border-[#0D5760]"
               >
-                <div 
+                <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleActivity(index)}
                 >
@@ -166,19 +166,18 @@ export const Parisodh = () => {
               Parishodh in Action
             </h2>
           </div>
-          
+
           {/* Carousel */}
           <div className="relative mb-12 rounded-lg overflow-hidden shadow-inner">
             <div className="aspect-[16/9]">
               {galleryImages.map((image, index) => (
-                <div 
+                <div
                   key={image.id}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentSlide ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
-                  <img 
-                    src={image.src} 
+                  <img
+                    src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover"
                     onError={(e) => {
@@ -191,22 +190,21 @@ export const Parisodh = () => {
                   </div>
                 </div>
               ))}
-            
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-              {galleryImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
+
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                {galleryImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? 'bg-white w-4' : 'bg-white/50'
+                      }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-    
+
         </section>
 
       </main>
