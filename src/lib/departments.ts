@@ -1,3 +1,23 @@
+export interface Activity {
+  title: string;
+  description: string;
+  images?: string[];
+}
+
+export interface Department {
+  name: string;
+  id: string;
+  description: string;
+  icon: string;
+  color: string;
+  image: string;
+  members: typeof coordinators;
+  details: {
+    mission: string;
+    activities: Activity[];
+  };
+}
+
 export const teamMembers = [
   { id: 1, name: "Sitaram Prajapat", position: "School Coordinator" },
   { id: 2, name: "Shreena Kansagra", position: "School Coordinator" },
@@ -21,7 +41,7 @@ export const coordinators = teamMembers.filter((member) =>
   member.position.includes("Coordinator")
 );
 
-export const departments = [
+export const departments: Department[] = [
   {
     name: "Computer Literacy Programme",
     id: "computer-literacy-programme",

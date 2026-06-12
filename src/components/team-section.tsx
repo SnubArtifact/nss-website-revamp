@@ -1,5 +1,5 @@
 import { TEAM_POSITIONS } from "../lib/constants";
-import { professors, teamMembers } from "../lib/team";
+import { teamMembers } from "../lib/team";
 import TeamMemberCard from "./TeamSection/TeamMemberCard";
 import { Card, CardContent } from "./ui/card";
 
@@ -16,13 +16,6 @@ export function TeamSection() {
     .filter((member) => member.position.includes("Coordinator"))
     .sort((a, b) => a.position.localeCompare(b.position));
 
-  const facultyIncharge = professors.filter(
-    (prof) => prof.position === "Program Coordinator"
-  );
-  const programmeOfficers = professors.filter(
-    (prof) => prof.position === "Programme Officer"
-  );
-
   return (
     <section
       id="team"
@@ -38,119 +31,6 @@ export function TeamSection() {
             Meet the dedicated team members who lead our community service
             initiatives and drive positive change.
           </p>
-        </div>
-
-        {/* Professors Section */}
-        <div className="mb-12 sm:mb-16">
-          <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 font-heading mb-6 sm:mb-8">
-            Professors
-          </h3>
-
-          {/* Faculty In-charge */}
-          {facultyIncharge.length > 0 && (
-            <div className="mb-8 sm:mb-12">
-              <h4 className="text-lg sm:text-xl font-semibold font-heading text-center text-gray-800 mb-4 sm:mb-6">
-                Program Coordinator
-              </h4>
-              <div className="flex justify-center">
-                {facultyIncharge.map((faculty, index) => (
-                  <div key={faculty.name} className="w-full max-w-sm">
-                    <Card className="card-hover">
-                      <CardContent className="p-4 sm:p-6 text-center">
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden mx-auto mb-3 sm:mb-4 border-2 border-blue-100">
-                          {faculty.imageUrl ? (
-                            <img
-                              src={faculty.imageUrl}
-                              alt={faculty.name}
-                              className="w-full h-full object-cover"
-                            />
-                          ) : (
-                            <div className="w-full h-full bg-blue-100 flex items-center justify-center">
-                              <i className="fas fa-user-tie text-blue-700 text-lg sm:text-xl"></i>
-                            </div>
-                          )}
-                        </div>
-                        <h5 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">
-                          {faculty.name}
-                        </h5>
-                        <p className="text-xs sm:text-sm text-blue-700 font-medium mb-2">
-                          {faculty.position}
-                        </p>
-                        {/* {faculty.email && (
-                          <a href={`mailto:${faculty.email}`} className="block">
-                            <Button
-                              variant="ghost"
-                              size="sm"
-                              className="mt-2 text-xs sm:text-sm"
-                            >
-                              <i className="fas fa-envelope mr-2"></i>
-                              <span className="hidden sm:inline">
-                                {faculty.email}
-                              </span>
-                              <span className="sm:hidden">Email</span>
-                            </Button>
-                          </a>
-                        )} */}
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Programme Officers */}
-          {programmeOfficers.length > 0 && (
-            <div className="mb-8 sm:mb-12">
-              <h4 className="text-lg sm:text-xl font-heading font-semibold text-center text-gray-800 mb-4 sm:mb-6">
-                Programme Officers
-              </h4>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                {programmeOfficers.map((officer, index) => (
-                  <div key={officer.name}>
-                    <Card className="card-hover h-full">
-                      <CardContent className="p-4 sm:p-6 text-center">
-                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden mx-auto mb-3 sm:mb-4 border-2 border-community-green/20">
-                          {officer.imageUrl ? (
-                            <img
-                              src={officer.imageUrl}
-                              alt={officer.name}
-                              className="w-full h-full object-cover"
-                            />
-                          ) : (
-                            <div className="w-full h-full bg-community-green/10 flex items-center justify-center">
-                              <i className="fas fa-chalkboard-teacher text-community-green text-base sm:text-lg"></i>
-                            </div>
-                          )}
-                        </div>
-                        <h5 className="text-sm sm:text-base font-semibold text-gray-900 mb-1">
-                          {officer.name}
-                        </h5>
-                        <p className="text-xs sm:text-sm text-community-green font-medium mb-2">
-                          {officer.position}
-                        </p>
-                        {/* {officer.email && (
-                          <a href={`mailto:${officer.email}`} className="block">
-                            <Button
-                              variant="ghost"
-                              size="sm"
-                              className="mt-2 text-xs"
-                            >
-                              <i className="fas fa-envelope mr-1 sm:mr-2"></i>
-                              <span className="hidden lg:inline">
-                                {officer.email}
-                              </span>
-                              <span className="lg:hidden">Contact</span>
-                            </Button>
-                          </a>
-                        )} */}
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Office Bearers */}
